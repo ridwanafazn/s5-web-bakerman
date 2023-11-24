@@ -1,0 +1,129 @@
+.product-container {
+  padding: 0 10vw;
+  background: radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(254, 238, 196, 1) 70%);
+  height: auto;
+  padding-top: 3vw;
+  padding-bottom: 5vw;
+}
+
+.product-title {
+  color: #4A1D1F;
+  font-family: 'Marhey', sans-serif;     
+  font-weight: 600;
+  font-size: 2rem;
+  width: 49%;
+}
+
+.product-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5vw;
+}
+
+.product-line {
+  height: 6rem;
+  width: 10%;
+}
+
+.product-description {
+  width: 50%;
+  font-family: 'Ambit', sans-serif;      
+}
+
+.product-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-function-image {
+  height: 24vw;
+  width: 100%; /* Menyamakan lebar dengan tinggi untuk menghindari distorsi */
+  border-radius: 20px;
+  margin-bottom: 1vw;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.product-function-container {
+  margin-right: 2vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3vw;
+}
+
+.product-function-description {
+  font-family: 'Ambit', sans-serif;      
+}
+
+.product-bottom-first-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-box {
+  display: flex;
+}
+
+.product-horizontal-line {
+  display: none;
+}
+
+.hero-button-container {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-top {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .product-title {
+    width: 100%;
+    font-size: 8.5vw;
+  }
+
+  .product-line {
+    display: none;
+  }
+
+  .product-description {
+    width: 100%;
+    font-size: 3.5vw;
+    margin-bottom: 3vw;
+  }
+
+  .product-bottom-first-row {
+    flex-direction: column;
+  }
+
+  .product-bottom-second-row {
+    flex-direction: column;
+  }
+
+  .product-function-image {
+    height: 52vw;
+  }
+
+  .product-horizontal-line {
+    display: flex;
+    width: 25vw;
+    margin-bottom: 3vw;
+  }
+
+  .product-function-description {
+    font-size: 3.9vw;
+  }
+
+  .product-function-image {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+
+  }
+
+  .product-function-container {
+    margin-bottom: 5vw;
+  }
+}

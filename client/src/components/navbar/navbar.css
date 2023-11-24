@@ -1,0 +1,82 @@
+
+.navbar-container {
+  position: fixed;
+  width: 80%;
+  padding:  1vw 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(254, 238, 196, 1) 100%);
+}
+
+.navbar-logo {
+  height: 55px;
+}
+
+.navbar-text {
+  font-family: 'Ambit', sans-serif;      
+  margin-left: 2.8vw;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.navbar-mobile-menu {
+  display: none;
+}
+
+.navbar-mobile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
+  background-color: #4A1D1F;
+  padding: 0.95rem;
+  position: absolute;
+  top: 20vw;
+  left: 1vw;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+
+  width: 90%;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-mobile-menu {
+    display: flex;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 2vw 11vw;
+
+  }
+
+  .navbar-text {
+    color: rgb(255, 255, 255);
+  }
+
+  .navbar-container {
+    padding:  4vw 10vw;
+  }
+
+  .navbar-mobile-container {
+    padding: 4vw;
+  }
+
+  .navbar-text {
+    padding-bottom: 1vw;
+    font-size: 4vw;
+  }
+  
+  .navbar-logo {
+    height: 14vw;
+    max-height: 80px;
+  }
+}

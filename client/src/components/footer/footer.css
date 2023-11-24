@@ -1,0 +1,44 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-menu {
+    display: flex;
+    align-items: flex-start;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 20px; 
+}
+
+
+.title{
+    font-family: 'Marhey', sans-serif;
+    font-size: 25px;
+}
+.products,
+.resources {
+    font-family: 'Ambit', sans-serif;
+}
+
+.copyright {
+    font-family: 'Marhey', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+    font-family: 'Marhey', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.menu-ul {
+    font-family: 'Ambit', sans-serif;
+}
+
+.social-icon-svg {
+    width: 32px; 
+    height: 32px; 
+}
