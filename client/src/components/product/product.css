@@ -1,13 +1,13 @@
 .product-container {
   padding: 0 10vw;
-  background: radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 1) 0%, rgba(254, 238, 196, 1) 70%);
+  background: #BAE8D4;
   height: auto;
   padding-top: 3vw;
   padding-bottom: 5vw;
 }
 
 .product-title {
-  color: #4A1D1F;
+  color: #272727;
   font-family: 'Marhey', sans-serif;     
   font-weight: 600;
   font-size: 2rem;
@@ -27,7 +27,8 @@
 
 .product-description {
   width: 50%;
-  font-family: 'Ambit', sans-serif;      
+  font-family: 'Ambit', sans-serif;   
+  color: #272727;  
 }
 
 .product-bottom {

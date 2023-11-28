@@ -1,12 +1,12 @@
 
 .navbar-container {
-  position: fixed;
+  position: flex;
   width: 80%;
   padding:  1vw 10vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(254, 238, 196, 1) 100%);
+  background-color: ##B8B8FF;
 }
 
 .navbar-logo {
@@ -19,7 +19,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: color 0.3s;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .navbar-mobile-menu {
@@ -32,7 +32,7 @@
   justify-content: flex-start;
   align-items: center;
   
-  background-color: #4A1D1F;
+  background-color: #B8B8FF;
   padding: 0.95rem;
   position: absolute;
   top: 20vw;

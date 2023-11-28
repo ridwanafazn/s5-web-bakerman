@@ -1,6 +1,6 @@
 .about-container {
   height: auto;
-  background: linear-gradient(180deg, rgba(254, 238, 196, 1) 0%, rgba(255, 248, 229, 1) 45%);
+  background: #FFFFFF;  
   padding: 10vw 10vw;
   display: flex;
   justify-content: center;
@@ -16,7 +16,6 @@
   width: 75vw;
   padding: 1vw 2vw;
   border-radius: 50px;
-  box-shadow: 0px 0px 100px rgba(255, 215, 0, 0.3);
 }
 
 .about-left-container {
@@ -32,7 +31,7 @@
   font-family: 'Marhey', sans-serif;         
   font-weight: 600;
   font-size: 2vw;
-  color: #4A1D1F;
+  color: #272727;
   margin-bottom: 1vw;
 }
 

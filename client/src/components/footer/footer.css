@@ -1,3 +1,11 @@
+.footer-container {
+    background: #B8B8FF;
+    padding: 10vw 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .list {
     display: flex;
     justify-content: space-between;
@@ -11,14 +19,15 @@
 .menu ul {
     list-style: none;
     padding: 0;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 
-.title{
+.title {
     font-family: 'Marhey', sans-serif;
     font-size: 25px;
 }
+
 .products,
 .resources {
     font-family: 'Ambit', sans-serif;
@@ -39,6 +48,6 @@
 }
 
 .social-icon-svg {
-    width: 32px; 
-    height: 32px; 
+    width: 32px;
+    height: 32px;
 }
