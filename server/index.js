@@ -1,19 +1,33 @@
-require('dotenv').config();
-
 const express = require('express');
 const mongoose = require('mongoose');
-const mongoString = process.env.DATABASE_URL;
+const dotenv = require("dotenv");
+const cors = require("cors");
+const usersRouter = require('./routes/users');
 
-mongoose.connect(mongoString);
-const database = mongoose.connection;
-
-database.once('connected', () => {
-    console.log('Database Connected');
-})
+dotenv.config();
 const app = express();
 
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+app.use(cors());
 app.use(express.json());
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
-})
+app.get('/', (req, res) => {
+    res.send('Hello, this is the root page!');
+  });
+  
+app.use('/api/users', usersRouter);
+
+
+const PORT = process.env.PORT || 8899;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = app;
