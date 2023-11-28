@@ -17,8 +17,8 @@ const currentYear = new Date().getFullYear();
 export function Footer() {
     return (
         <footer className="footer-container">
-            <div className="menu">
-                <div className="column">
+            <div className="footer">
+                <div className="info">
                     <Typography variant="h5" className="title">
                         Bakerman - Bakery Store
                     </Typography>

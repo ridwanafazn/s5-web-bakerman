@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ##B8B8FF;
+  background-color: #B8B8FF;
 }
 
 .navbar-logo {
@@ -18,6 +18,7 @@
   margin-left: 2.8vw;
   font-size: 1.1rem;
   cursor: pointer;
+  color: #272727;
   transition: color 0.3s;
   font-weight: 600;
 }
@@ -31,7 +32,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
+  color: #272727;
   background-color: #B8B8FF;
   padding: 0.95rem;
   position: absolute;
@@ -40,9 +41,9 @@
   text-align: left;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
-
   width: 90%;
 }
+
 
 @media screen and (max-width: 1024px) {
   .navbar-mobile-menu {
@@ -73,6 +74,7 @@
   .navbar-text {
     padding-bottom: 1vw;
     font-size: 4vw;
+    color: #272727;
   }
   
   .navbar-logo {

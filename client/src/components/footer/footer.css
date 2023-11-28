@@ -1,6 +1,7 @@
 .footer-container {
     background: #B8B8FF;
-    padding: 10vw 10vw;
+    /* padding: 10vw 10vw; */
+    padding: 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +17,10 @@
     align-items: flex-start;
 }
 
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+}
 .menu ul {
     list-style: none;
     padding: 0;
@@ -26,7 +31,10 @@
 .title {
     font-family: 'Marhey', sans-serif;
     font-size: 25px;
+    display: flex;
+    padding: 0 0;
 }
+
 
 .products,
 .resources {
@@ -36,11 +44,13 @@
 .copyright {
     font-family: 'Marhey', sans-serif;
     margin-bottom: 1rem;
+    justify-content: space-between;
 }
-
-.copyright {
-    font-family: 'Marhey', sans-serif;
-    margin-bottom: 1rem;
+.social-icon {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 15px;
 }
 
 .menu-ul {

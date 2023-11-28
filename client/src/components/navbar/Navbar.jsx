@@ -30,8 +30,8 @@ const Navbar = () => {
 
       <div className="navbar-mobile-menu">
         {toggleMenu
-            ? <RiCloseLine color="#4A1D1F" size={27} onClick={() => setToggleMenu(false)} />
-            : <RiMenu3Line color="#4A1D1F" size={27} onClick={() => setToggleMenu(true)} />}
+            ? <RiCloseLine color="#272727" size={27} onClick={() => setToggleMenu(false)} />
+            : <RiMenu3Line color="#272727" size={27} onClick={() => setToggleMenu(true)} />}
         {toggleMenu && (
             <div className="navbar-mobile-container">
               <Menu />
