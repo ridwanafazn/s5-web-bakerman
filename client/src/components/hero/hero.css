@@ -84,18 +84,26 @@
   }
 
   .hero-cake {
-    height: 78vw;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    width: 120%;
+    object-fit: cover;
   }
 
   .hero-left {
     width: 100%;
     padding: 0;
+    object-fit: cover;
   }
 
   .hero-right {
+    display: flex;
+    justify-content: center;
     padding-top: 15vw;
     width: 100%;
     margin-bottom: 16vw;
+    object-fit: cover;
   }
 
   .hero-button-text {
