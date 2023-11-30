@@ -1,50 +1,61 @@
 .mission-container{
-    display:contents;
+    display:flex;
+    width:fit-content;
+    justify-content: space-between;
 }
 
-h1{
+.left-mission {
+    width: 70%;  
+    background-color:ghostwhite;  
+    margin: 1vw;
+    
+}
+
+.assets{
+    padding: 1vw;
+}
+
+.right-mission {
+    width: 30%;
+    background-color:ghostwhite;  
+    margin: 1vw 1vw;
+
+}
+
+.mission-article{
+    display:block;
+    margin: 5vw 5vw;
+    align-content: center;
+}
+
+.left-mission h1 {
     font-family: 'Marhey', sans-serif;   
     display: flex;
     justify-content: center;
     font-size:xx-large;
 }
 
-h2,h3{
+.right-mission h1 {
+    font-family: 'Marhey', sans-serif;   
+    display: flex;
+    justify-content: center;
+    font-size:large;
+    object-fit: cover;
+}
+
+.left-mission h2,h3 {
     font-family: 'Marhey', sans-serif;   
 }
 
-p{
+p {
     font-family: 'Ambit', sans-serif;
+    justify-content: center;
 }
 
-.hero-section, .challenge-section, .fitness-section,
-.how-it-works-section, .empowering-section, .movement-section {
-  margin-bottom: 40px; /* Adjust the margin as needed */
+.aside-info {
+    justify-content: center;
 }
 
-.hero-section{
-    
-}
-
-.challenge-section{
-
-}
-
-.fitness-section{
-
-}
-
-.how-it-works-section{
-
-}
-
-.empowering-section{
-    
-}
-
-.movement-section{
-
-}
 
 @media screen and (max-width: 1024px){
     

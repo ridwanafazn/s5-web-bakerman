@@ -1,82 +1,144 @@
 // this file is in the 'src/pages/Mission.jsx'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/mission.css'
+import tspsugar from '../assets/images/article-mission/too-much-sugar.webp'
+
+
+
+
 
 const Mission = () => {
+
+//     const [slideIndex, setSlideIndex] = useState(1);
+
+//   useEffect(() => {
+//     showSlides(slideIndex);
+//   }, [slideIndex]);
+
+//   const plusSlides = (n) => {
+//     setSlideIndex((prevIndex) => prevIndex + n);
+//   };
+
+//   const showSlides = (n) => {
+//     let i;
+//     const slides = document.getElementsByClassName("mySlides");
+
+//     if (n > slides.length) {
+//       setSlideIndex(1);
+//     }
+
+//     if (n < 1) {
+//       setSlideIndex(slides.length);
+//     }
+
+//     for (i = 0; i < slides.length; i++) {
+//       slides[i].style.display = "none";
+//     }
+
+//     slides[slideIndex - 1].style.display = "block";
+//   };
+
+//   const myFunction = () => {
+//     var x = document.getElementById("myLinks");
+//     if (x.style.display === "block") {
+//       x.style.display = "none";
+//     } else {
+//       x.style.display = "block";
+//     }
+//   };
     return (
-        <body>
-            <article className="mission-container"> {/* Mengganti div menjadi article karena ini adalah bagian dari konten */}
-            {/* Hero Section */}
-            <section className="hero-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h1>Our Sweet Mission.</h1>
-                <p>
-                    At Bakerman, we&apos;re on a mission to redefine your sweet experience. Join us in embracing
-                    a healthier lifestyle while savoring the goodness of our bakery treats.
-                </p>
-            </section>
+        <div className='mission-container'>
+            <div className='left-mission'>
+                <article className="mission-article"> {/* Mengganti div menjadi article karena ini adalah bagian dari konten */}
+                    {/* Hero Section */}
+                    <section className="hero-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h1>Our Sweet Mission </h1>
+                        <p>
+                            At Bakerman, we&apos;re on a mission to redefine your sweet experience. Join us in embracing
+                            a healthier lifestyle while savoring the goodness of our bakery treats. <br />
+                        </p>
+                        <img className='assets' src={tspsugar} alt="Too much sugar" />
+                        <p>There are many speculations regarding the root cause of diabetes, one of them being an excessive consumption of sugar. Diabetes is a complex medical condition caused by a combination of factors. Eating too much sugar alone isn’t enough to cause diabetes; it’s much more complicated than that. For example, type 2 diabetes, which accounts for 90% to 95% of all diagnosed diabetes, per the Centers for Disease Control and Prevention, can develop due to a combination of genetic and lifestyle factors. While the American Diabetes Association notes that there is an association between increased intake of sugary beverages and type 2 diabetes, eating sugar doesn’t cause diabetes. Causation and association aren’t the same as correlation. Other factors, such as environment, genetics, medical history, age, race, physical activity and stress, also play a role.
+                            Read on to learn more about the complexities of diabetes, the different types, the best ways to eat to reduce your risk and more.</p>
 
-            {/* Sugar Reduction Challenge */}
-            <section className="challenge-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h2>Sweet Choices, Smart Limits.</h2>
-                <p>
-                    We care about your well-being. Every week, you have up to 3 chances to indulge in our
-                    sweet delights, each calculated to contain a maximum of 40g of sugar. It&apos;s a delicious
-                    journey with mindful choices.
-                </p>
-            </section>
+                    </section>
 
-            {/* Fitness Integration */}
-            <section className="fitness-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h2>Earn Sweet Treats with Every Stride.</h2>
-                <p>
-                    We believe in balance. Connect your Strava account and exchange your sports activities
-                    for chances to treat yourself. For each validated Strava activity, you earn an additional
-                    chance to enjoy our treats guilt-free.
-                </p>
-            </section>
+                    {/* Sugar Reduction Challenge */}
+                    <section className="challenge-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h2>Sweet Choices, Smart Limits.</h2>
+                        <p>
+                            We care about your well-being. Every week, you have up to 3 chances to indulge in our
+                            sweet delights, each calculated to contain a maximum of 40g of sugar. It&apos;s a delicious
+                            journey with mindful choices.
+                        </p>
+                    </section>
 
-            {/* How It Works */}
-            <section className="how-it-works-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h2>Navigating Your Bakerman Mission.</h2>
-                <ul>
-                    <li>1. Purchase Chances: Explore our bakery wonders, but with a limit. You have three chances to buy treats each week.</li>
-                    <li>2. Sugar Cap: Each chance is designed to provide you with a sweet experience without exceeding 40g of sugar.</li>
-                    <li>3. Strava Exchange: Integrate your Strava account. Engage in sports activities, and for each valid session, earn an extra chance to treat yourself.</li>
-                </ul>
-            </section>
+                    {/* Fitness Integration */}
+                    <section className="fitness-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h2>Earn Sweet Treats with Every Stride.</h2>
+                        <p>
+                            We believe in balance. Connect your Strava account and exchange your sports activities
+                            for chances to treat yourself. For each validated Strava activity, you earn an additional
+                            chance to enjoy our treats guilt-free.
+                        </p>
+                    </section>
 
-            {/* Empowering Choices */}
-            <section className="empowering-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h2>More Than a Bakery.</h2>
-                <p>
-                    Bakerman is not just about pastries; it&apos;s a lifestyle. We encourage you to savor the sweetness
-                    in moderation, embrace physical activity, and make choices that empower your well-being.
-                </p>
-            </section>
+                    {/* How It Works */}
+                    <section className="how-it-works-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h2>Navigating Your Bakerman Mission.</h2>
+                        <p>
+                            <ol>
+                                <li><p>Purchase Chances: Explore our bakery wonders, but with a limit. You have three chances to buy treats each week.</p></li>
+                                <li><p>Sugar Cap: Each chance is designed to provide you with a sweet experience without exceeding 40g of sugar.</p></li>
+                                <li><p>Strava Exchange: Integrate your Strava account. Engage in sports activities, and for each valid session, earn an extra chance to treat yourself.</p></li>
+                            </ol>
+                        </p>
 
-            {/* Join the Movement */}
-            <section className="movement-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                <h2>Become a Bakerman Advocate.</h2>
-                <p>
-                    Spread the sweetness responsibly. Share your Bakerman journey on social media using #BakermanBalance
-                    and inspire others to make mindful choices. Let&apos;s create a community that celebrates the joy of living well.
-                </p>
-            </section>
-        </article>
-        {/* <aside>
-            <h2 className='aside-title'>News Update</h2>
-            <div className="slideshow-container">
-                <div className="mySlides fade">
-                    <img src="" alt="Slide 1"/>
-                    <p>Patch 4.0.1 New Agent Iso : Chinese Fighter</p>
-                </div>
-                <a className="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a className="next" onclick="plusSlides(1)">&#10095;</a>
+                    </section>
+
+                    {/* Empowering Choices */}
+                    <section className="empowering-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h2>More Than a Bakery.</h2>
+                        <p>
+                            Bakerman is not just about pastries; it&apos;s a lifestyle. We encourage you to savor the sweetness
+                            in moderation, embrace physical activity, and make choices that empower your well-being.
+                        </p>
+                    </section>
+
+                    {/* Join the Movement */}
+                    <section className="movement-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
+                        <h2>Become a Bakerman Advocate.</h2>
+                        <p>
+                            Spread the sweetness responsibly. Share your Bakerman journey on social media using #BakermanBalance
+                            and inspire others to make mindful choices. Let&apos;s create a community that celebrates the joy of living well.
+                        </p>
+                    </section>
+                </article>
+
             </div>
-        </aside> */}
-        
-        </body>
-        
+            <div className='right-mission'>
+                <aside>
+                    <h1>Other Eating Well Article</h1>
+                    <div className="aside-info">
+                        <div className="article-advertise">
+                            <p>What Happens to Your Body When You Have Insulin Resistance</p>
+                        </div>
+                        <div className="article-advertise">
+                            <p>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
+                        </div>
+                        <div className="article-advertise">
+                            <p>Gluten free? Gotta be Nature&apos;s Bakery.</p>
+                        </div>
+                        <button className="prev" onClick={() => plusSlides(-1)}>&#10094;</button>
+                        <button className="next" onClick={() => plusSlides(1)}>&#10095;</button>
+
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+
+
     );
 };
 
