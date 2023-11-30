@@ -20,7 +20,7 @@ const Menu = ({ closeMenu }) => {
       <RouterLink to="/category" onClick={closeMenu} className="navbar-text" style={linkStyle}> 
         Category
       </RouterLink>
-      <RouterLink to="/profile" onClick={closeMenu} className="navbar-text" style={linkStyle}>
+      <RouterLink to="/account" onClick={closeMenu} className="navbar-text" style={linkStyle}>
         Profile
       </RouterLink>
     </>
