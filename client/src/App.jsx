@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 // Pages
 import Mission from './pages/Mission';
 import Login from './pages/Login';
+import Signup from './pages/SignUp';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
           <Navbar />
           <Hero />
           <Product />
-          <About/>
+          <About />
           <Footer />
         </>} />
         <Route path="/mission" element={<>
@@ -42,17 +44,17 @@ function App() {
         </>} />
         <Route path="/account" element={<>
           <Navbar />
-          <h1>This is /account</h1>
+          <Profile />
           <Footer />
         </>} />
-        <Route path="/auth/signin" element={<>
+        <Route path="/signin" element={<>
           <Navbar />
-          <Login/>
+          <Login />
           <Footer />
         </>} />
-        <Route path="/auth/signup" element={<>
+        <Route path="/signup" element={<>
           <Navbar />
-          <h1>This is /auth/signup</h1>
+          <Signup />
           <Footer />
         </>} />
       </Routes>
@@ -61,4 +63,3 @@ function App() {
 }
 
 export default App;
-
