@@ -1,27 +1,32 @@
 import React, { useState } from "react";
-import "./navbar.css";
-import { Link } from "react-scroll";
+import "../styles/navbar.css";
+import { Link as ScrollLink} from "react-scroll";
+import { Link as RouterLink} from "react-router-dom";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import navbarLogo from '../../assets/ico/navbar-logo.png';
+import navbarLogo from '../assets/ico/navbar-logo.png';
 
 const Menu = ({ closeMenu }) => {
+  const linkStyle = {
+    textDecoration: "none"
+  };
   return (
     <>
-      <Link to="/mission" onClick={closeMenu} className="navbar-text">
+      <RouterLink to="/mission" onClick={closeMenu} className="navbar-text" style={linkStyle}>
         Mission
-      </Link>
-      <Link to="" spy={true} smooth={true} duration={500} className="navbar-text">
+      </RouterLink>
+      <RouterLink to="/chance" onClick={closeMenu} className="navbar-text" style={linkStyle}>
         Chance
-      </Link>
-      <Link to="" spy={true} smooth={true} duration={500} className="navbar-text">
+      </RouterLink>
+      <RouterLink to="/category" onClick={closeMenu} className="navbar-text" style={linkStyle}> 
         Category
-      </Link>
-      <Link to="" spy={true} smooth={true} duration={500} className="navbar-text">
+      </RouterLink>
+      <RouterLink to="/profile" onClick={closeMenu} className="navbar-text" style={linkStyle}>
         Profile
-      </Link>
+      </RouterLink>
     </>
   );
 };
+
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -33,8 +38,10 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-left">
+        <RouterLink to="/">
         {/* Ganti gambar logo dengan logo yang sesuai */}
         <img className="navbar-logo" src={navbarLogo} alt="Navbar Logo" />
+        </RouterLink>
       </div>
       <div className="navbar-right">
         <Menu closeMenu={closeMenu} /> {/* Meneruskan closeMenu sebagai prop */}

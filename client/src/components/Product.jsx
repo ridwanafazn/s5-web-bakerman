@@ -1,11 +1,11 @@
 import React from "react";
-import './product.css';
+import '../styles/product.css';
  
-import productLine from '../../assets/svg/line-y.svg'
-import horizontalLine from '../../assets/images/product-horizontal-line.png'
-import Buns from '../../assets/images/epic-morning-buns.webp'
-import WheatLoaf from '../../assets/images/organic-wheat-free-loaf.webp'
-import BananaPudding from '../../assets/images/classic-banana-pudding.webp'
+import productLine from '../assets/svg/line-y.svg'
+import horizontalLine from '../assets/images/product-horizontal-line.png'
+import Buns from '../assets/images/epic-morning-buns.webp'
+import WheatLoaf from '../assets/images/organic-wheat-free-loaf.webp'
+import BananaPudding from '../assets/images/classic-banana-pudding.webp'
 
 const ProductBox = ({image, desc}) => {
   return (

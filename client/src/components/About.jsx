@@ -1,9 +1,10 @@
 import React from "react";
-import './about.css';
+import '../styles/about.css';
 
-import Official from '../../assets/images/official-store.jpg'
-import Offline from '../../assets/images/offline-bakery.jpg'
-import Reseller from '../../assets/images/online-reseller-850x550.jpg'
+
+import Official from '../assets/images/official-store.jpg'
+import Offline from '../assets/images/offline-bakery.jpg'
+import Reseller from '../assets/images/online-reseller-850x550.jpg'
 
 const About = () => {
   return (

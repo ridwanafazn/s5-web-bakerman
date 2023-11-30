@@ -1,7 +1,7 @@
 import React from "react";
-import './hero.css';
+import '../styles/hero.css';
 
-import heroCake from '../../assets/images/hero-cake.webp'
+import heroCake from '../assets/images/hero-cake.webp'
 
 const Hero = () => {
   return (

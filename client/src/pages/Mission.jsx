@@ -1,6 +1,6 @@
 // this file is in the 'src/pages/Mission.jsx'
 import React from 'react';
-import './pages-style/mission.css'
+import '../styles/mission.css'
 
 const Mission = () => {
     return (

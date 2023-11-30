@@ -1,29 +1,18 @@
 import { Component, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import './App.css'
+import './styles/index.css'
 
 // Component
-import Navbar from './components/navbar/Navbar'
-import Hero from './components/hero/Hero'
-import Product from './components/product/Product'
-import About from './components/about/About'
-import Footer from './components/footer/Footer'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Product from './components/Product'
+import About from './components/About'
+import Footer from './components/Footer'
 
 // Pages
 import Mission from './pages/Mission';
 
-// function App() {
-//   return (
-//     <>
-// <Navbar />
-// <Hero />
-// <Product />
-// <About />
-// <Footer/>
-//     </>
-//   )
-// }
 
 function App() {
   return (

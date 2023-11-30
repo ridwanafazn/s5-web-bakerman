@@ -1,5 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-import './footer.css';
+import '../styles/footer.css';
 
 const LINKS = [
     {
