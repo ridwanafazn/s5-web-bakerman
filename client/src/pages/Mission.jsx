@@ -1,14 +1,16 @@
+// this file is in the 'src/pages/Mission.jsx'
 import React from 'react';
 import './pages-style/mission.css'
 
 const Mission = () => {
     return (
-        <article className="mission-container"> {/* Mengganti div menjadi article karena ini adalah bagian dari konten */}
+        <body>
+            <article className="mission-container"> {/* Mengganti div menjadi article karena ini adalah bagian dari konten */}
             {/* Hero Section */}
             <section className="hero-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
                 <h1>Our Sweet Mission.</h1>
                 <p>
-                    At Bakerman, we're on a mission to redefine your sweet experience. Join us in embracing
+                    At Bakerman, we&apos;re on a mission to redefine your sweet experience. Join us in embracing
                     a healthier lifestyle while savoring the goodness of our bakery treats.
                 </p>
             </section>
@@ -18,7 +20,7 @@ const Mission = () => {
                 <h2>Sweet Choices, Smart Limits.</h2>
                 <p>
                     We care about your well-being. Every week, you have up to 3 chances to indulge in our
-                    sweet delights, each calculated to contain a maximum of 40g of sugar. It's a delicious
+                    sweet delights, each calculated to contain a maximum of 40g of sugar. It&apos;s a delicious
                     journey with mindful choices.
                 </p>
             </section>
@@ -47,7 +49,7 @@ const Mission = () => {
             <section className="empowering-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
                 <h2>More Than a Bakery.</h2>
                 <p>
-                    Bakerman is not just about pastries; it's a lifestyle. We encourage you to savor the sweetness
+                    Bakerman is not just about pastries; it&apos;s a lifestyle. We encourage you to savor the sweetness
                     in moderation, embrace physical activity, and make choices that empower your well-being.
                 </p>
             </section>
@@ -57,10 +59,24 @@ const Mission = () => {
                 <h2>Become a Bakerman Advocate.</h2>
                 <p>
                     Spread the sweetness responsibly. Share your Bakerman journey on social media using #BakermanBalance
-                    and inspire others to make mindful choices. Let's create a community that celebrates the joy of living well.
+                    and inspire others to make mindful choices. Let&apos;s create a community that celebrates the joy of living well.
                 </p>
             </section>
         </article>
+        {/* <aside>
+            <h2 className='aside-title'>News Update</h2>
+            <div className="slideshow-container">
+                <div className="mySlides fade">
+                    <img src="" alt="Slide 1"/>
+                    <p>Patch 4.0.1 New Agent Iso : Chinese Fighter</p>
+                </div>
+                <a className="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a className="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </aside> */}
+        
+        </body>
+        
     );
 };
 

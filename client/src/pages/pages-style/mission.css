@@ -1,5 +1,25 @@
 .mission-container{
+    display:contents;
+}
 
+h1{
+    font-family: 'Marhey', sans-serif;   
+    display: flex;
+    justify-content: center;
+    font-size:xx-large;
+}
+
+h2,h3{
+    font-family: 'Marhey', sans-serif;   
+}
+
+p{
+    font-family: 'Ambit', sans-serif;
+}
+
+.hero-section, .challenge-section, .fitness-section,
+.how-it-works-section, .empowering-section, .movement-section {
+  margin-bottom: 40px; /* Adjust the margin as needed */
 }
 
 .hero-section{
