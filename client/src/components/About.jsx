@@ -1,7 +1,6 @@
 import React from "react";
 import '../styles/about.css';
 
-
 import Official from '../assets/images/official-store.jpg'
 import Offline from '../assets/images/offline-bakery.jpg'
 import Reseller from '../assets/images/online-reseller-850x550.jpg'
@@ -20,22 +19,27 @@ const About = () => {
         </div>
         <div className="about-right-container">
           <div className="about-image-container">
-            <img className="about-making-cake" src={Official} alt="Shipping 1" />
+            <a href="https://www.tokopedia.com/misolpastry" target="_blank" rel="noopener noreferrer">
+              <img className="about-making-cake" src={Official} alt="Official Store" />
+            </a>
             <p className="image-caption">Official Store</p>
           </div>
 
           <div className="about-image-container">
-            <img className="about-making-cake" src={Reseller} alt="Shipping 2" />
+            <a href="/near-online-reseller">
+              <img className="about-making-cake" src={Reseller} alt="Near Online Reseller" />
+            </a>
             <p className="image-caption">Near Online Reseller</p>
           </div>
+
           <div className="about-image-container">
-            <img className="about-making-cake" src={Offline} alt="Shipping 2" />
+            <a href="/visit-offline-store">
+              <img className="about-making-cake" src={Offline} alt="Visit Offline Store" />
+            </a>
             <p className="image-caption">Visit Offline Store</p>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 };

@@ -7,5 +7,5 @@ export default function NotFound() {
             <p>Here are some helpful links</p>
             <Link to='/'>Home</Link>
         </div>  
-    )
-}
+    );
+};

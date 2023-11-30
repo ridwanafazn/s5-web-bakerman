@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 
 // Pages
 import Mission from './pages/Mission';
-
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Navbar />
           <Hero />
           <Product />
-          <About />
+          <About/>
           <Footer />
         </>} />
         <Route path="/mission" element={<>
@@ -47,7 +47,7 @@ function App() {
         </>} />
         <Route path="/auth/signin" element={<>
           <Navbar />
-          <h1>This is /auth/signin</h1>
+          <Login/>
           <Footer />
         </>} />
         <Route path="/auth/signup" element={<>
