@@ -1,0 +1,20 @@
+.container, .category-container, .chance-container{
+  background: #F9F4F6;
+  display: flex;
+  padding: 2vw 5vw;
+  height: 87vh;
+  justify-content: center;
+  font-family: 'Ambit', sans-serif; 
+}
+
+.button {
+    display: flex;
+}
+
+h1 {
+  font-family: 'Marhey', sans-serif; 
+}
+
+p {
+  font-family: 'Ambit', sans-serif; 
+}

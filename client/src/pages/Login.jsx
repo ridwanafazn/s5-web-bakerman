@@ -1,6 +1,8 @@
 // import React from 'react';
 // import '../styles/auth.css'
 import { FaGoogle } from 'react-icons/fa'
+
+import '../styles/auth.css'
 // import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 // import { auth } from '../authentication/firebase';
 

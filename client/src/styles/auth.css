@@ -7,7 +7,19 @@ button{
     justify-content: center;
 }
 
-.login-container{
+.container{
+    background: #F9F4F6;
     display: flex;
+    padding: 6vw 10vw;
+    height: 87vh;
+    flex-direction: row;
     justify-content: center;
 }
+  
+  h1 {
+    font-family: 'Marhey', sans-serif; 
+  }
+  
+  p {
+    font-family: 'Ambit', sans-serif; 
+  }

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { auth } from "../authentication/firebase";
 import { signOut } from "firebase/auth";
+import '../styles/category.css';
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -20,9 +21,9 @@ const Profile = () => {
                     {user ? (
                         <>
                             <p>
-                                Welcome <em className="text-decoration-underline">{user.email}</em>. You are logged in!
+                                Welcome <em className="text-decoration-underline">{user.email}</em>. <br />You are logged in!
                             </p>
-                            <div className="d-grid gap-2">
+                            <div className="button">
                                 <button type="submit" className="btn btn-primary pt-3 pb-3" onClick={(e) => logoutUser(e)}>Logout</button>
                             </div>
                         </>

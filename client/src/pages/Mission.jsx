@@ -8,44 +8,45 @@ import tspsugar from '../assets/images/article-mission/too-much-sugar.webp'
 
 
 const Mission = () => {
+    //pengen slideshow 
+    // const [slideIndex, setSlideIndex] = useState(1);
 
-//     const [slideIndex, setSlideIndex] = useState(1);
+    // const plusSlides = (n) => {
+    //     setSlideIndex((prevIndex) => prevIndex + n);
+    // };
 
-//   useEffect(() => {
-//     showSlides(slideIndex);
-//   }, [slideIndex]);
+    // const showSlide = (n) => {
+    //     const slides = document.getElementsByClassName('article-advertise');
+    //     if (n > slides.length) {
+    //         setSlideIndex(1);
+    //     } else if (n < 1) {
+    //         setSlideIndex(slides.length);
+    //     } else {
+    //         setSlideIndex(n);
+    //     }
+    // };
 
-//   const plusSlides = (n) => {
-//     setSlideIndex((prevIndex) => prevIndex + n);
-//   };
+    // useEffect(() => {
+    //     showSlide(slideIndex);
+    // }, [slideIndex]);
 
-//   const showSlides = (n) => {
-//     let i;
-//     const slides = document.getElementsByClassName("mySlides");
+    const showSlide = (n) => {
+        const slides = document.getElementsByClassName('article-advertise');
+        const info = document.querySelector('.aside-info');
+    
+        if (n > slides.length) {
+            setSlideIndex(1);
+        } else if (n < 1) {
+            setSlideIndex(slides.length);
+        } else {
+            setSlideIndex(n);
+        }
+    
+        // Mengatur transformasi berdasarkan indeks slide
+        info.style.transform = `translateX(${-100 * (slideIndex - 1)}%)`;
+    };
+    
 
-//     if (n > slides.length) {
-//       setSlideIndex(1);
-//     }
-
-//     if (n < 1) {
-//       setSlideIndex(slides.length);
-//     }
-
-//     for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//     }
-
-//     slides[slideIndex - 1].style.display = "block";
-//   };
-
-//   const myFunction = () => {
-//     var x = document.getElementById("myLinks");
-//     if (x.style.display === "block") {
-//       x.style.display = "none";
-//     } else {
-//       x.style.display = "block";
-//     }
-//   };
     return (
         <div className='mission-container'>
             <div className='left-mission'>
@@ -120,19 +121,21 @@ const Mission = () => {
                 <aside>
                     <h1>Other Eating Well Article</h1>
                     <div className="aside-info">
-                        <div className="article-advertise">
+                        <div className="article-advertise slide1">
+                            <img className='assets' src={tspsugar} alt="slide1"/>
                             <p>What Happens to Your Body When You Have Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise">
+                        <div className="article-advertise slide2">
+                            <img className='assets' src={tspsugar} alt="slide2" />
                             <p>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise">
+                        <div className="article-advertise slide3">
+                            <img className='assets' src={tspsugar} alt="slide3" />
                             <p>Gluten free? Gotta be Nature&apos;s Bakery.</p>
                         </div>
-                        <button className="prev" onClick={() => plusSlides(-1)}>&#10094;</button>
-                        <button className="next" onClick={() => plusSlides(1)}>&#10095;</button>
-
                     </div>
+                    <button className="prev" onClick={() => plusSlides(-1)}>&#10094;</button>
+                    <button className="next" onClick={() => plusSlides(1)}>&#10095;</button>
                 </aside>
             </div>
 

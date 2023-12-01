@@ -2,6 +2,7 @@
     display:flex;
     width:fit-content;
     justify-content: space-between;
+    height: auto;
 }
 
 .left-mission {
@@ -11,16 +12,8 @@
     
 }
 
-.assets{
-    padding: 1vw;
-}
 
-.right-mission {
-    width: 30%;
-    background-color:ghostwhite;  
-    margin: 1vw 1vw;
 
-}
 
 .mission-article{
     display:block;
@@ -52,11 +45,82 @@ p {
     justify-content: center;
 }
 
-.aside-info {
+
+
+.assets {
+    display: flex;
     justify-content: center;
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+.right-mission {
+    width: 30%;
+    background-color: ghostwhite;
+    margin: 1vw 1vw;
+    overflow: hidden; /* Menyembunyikan bagian yang melebihi container */
+}
+
+.aside-info {
+    display: flex;
+    transition: transform 0.5s ease; /* Efek transisi untuk animasi perpindahan slide */
+    width: 300%; /* Mengatur lebar agar semua slide dapat muat */
+}
+
+.article-advertise {
+    flex: 0 0 33.33%; /* Setiap item slide mengambil 33.33% lebar container */
+    box-sizing: border-box;
+    padding: 0 10px; /* Padding untuk menghindari teks berdekatan dengan tepi */
 }
 
 
-@media screen and (max-width: 1024px){
-    
+  .prev,
+.next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  flex-direction:column;
+  justify-content: center;
+  color: black;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
 }
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 1024px) {
+    .aside-info {
+      flex-direction: column;
+    }
+  
+    .prev,
+    .next {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 50px;
+    }
+  
+    .prev {
+      left: 0;
+      border-radius: 3px 3px 0 0;
+    }
+  
+    .next {
+      right: 0;
+      border-radius: 0 0 3px 3px;
+    }
+  }

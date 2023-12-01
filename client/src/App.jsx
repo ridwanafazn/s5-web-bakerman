@@ -15,6 +15,8 @@ import Mission from './pages/Mission';
 import Login from './pages/Login';
 import Signup from './pages/SignUp';
 import Profile from './pages/Profile';
+import Chance from './pages/Chance';
+import Category from './pages/Category';
 
 function App() {
   return (
@@ -34,28 +36,25 @@ function App() {
         </>} />
         <Route path="/chance" element={<>
           <Navbar />
-          <h1>This is /chance</h1>
+          <Chance />
           <Footer />
         </>} />
         <Route path="/category" element={<>
           <Navbar />
-          <h1>This is /category</h1>
+          <Category />
           <Footer />
         </>} />
         <Route path="/account" element={<>
           <Navbar />
           <Profile />
           <Footer />
+
         </>} />
         <Route path="/signin" element={<>
-          <Navbar />
           <Login />
-          <Footer />
         </>} />
         <Route path="/signup" element={<>
-          <Navbar />
           <Signup />
-          <Footer />
         </>} />
       </Routes>
     </Router>
