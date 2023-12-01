@@ -30,22 +30,28 @@ const Mission = () => {
     //     showSlide(slideIndex);
     // }, [slideIndex]);
 
-    const showSlide = (n) => {
-        const slides = document.getElementsByClassName('article-advertise');
-        const info = document.querySelector('.aside-info');
-    
-        if (n > slides.length) {
-            setSlideIndex(1);
-        } else if (n < 1) {
-            setSlideIndex(slides.length);
-        } else {
-            setSlideIndex(n);
-        }
-    
-        // Mengatur transformasi berdasarkan indeks slide
-        info.style.transform = `translateX(${-100 * (slideIndex - 1)}%)`;
+    // const showSlide = (n) => {
+    //     const slides = document.getElementsByClassName('article-advertise');
+    //     const info = document.querySelector('.aside-info');
+
+    //     if (n > slides.length) {
+    //         setSlideIndex(1);
+    //     } else if (n < 1) {
+    //         setSlideIndex(slides.length);
+    //     } else {
+    //         setSlideIndex(n);
+    //     }
+
+    //     // Mengatur transformasi berdasarkan indeks slide
+    //     info.style.transform = `translateX(${-100 * (slideIndex - 1)}%)`;
+    // };
+
+    const [slideIndex, setSlideIndex] = useState(1);
+
+    const plusSlides = (n) => {
+        setSlideIndex((prevIndex) => prevIndex + n);
     };
-    
+
 
     return (
         <div className='mission-container'>
@@ -68,9 +74,7 @@ const Mission = () => {
                     <section className="challenge-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
                         <h2>Sweet Choices, Smart Limits.</h2>
                         <p>
-                            We care about your well-being. Every week, you have up to 3 chances to indulge in our
-                            sweet delights, each calculated to contain a maximum of 40g of sugar. It&apos;s a delicious
-                            journey with mindful choices.
+                            We are deeply committed to prioritizing your well-being and fostering a holistic approach to a healthier lifestyle. Each week, we extend to you the opportunity to indulge in our delectable sweet delights, carefully crafted with a conscientious touch. These tempting treats are meticulously calculated to ensure they contain no more than 40g of sugar, allowing you the freedom to savor the goodness without compromising your health. Embark on a delightful journey with us, where every choice is made mindfully, enriching your experience with the perfect blend of flavor and well-being.
                         </p>
                     </section>
 
@@ -78,9 +82,10 @@ const Mission = () => {
                     <section className="fitness-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
                         <h2>Earn Sweet Treats with Every Stride.</h2>
                         <p>
-                            We believe in balance. Connect your Strava account and exchange your sports activities
-                            for chances to treat yourself. For each validated Strava activity, you earn an additional
-                            chance to enjoy our treats guilt-free.
+                        At the heart of our philosophy lies a steadfast belief in the harmonious balance between a fulfilling lifestyle and your well-being. Embrace a holistic approach to health by seamlessly integrating your Strava account into our community. This innovative connection not only adds a dynamic dimension to your fitness journey but also opens the door to a realm of delectable rewards.
+                        </p>
+                        <p>
+                        When you choose to synchronize your Strava activities with us, every stride, every endeavor, transforms into an opportunity to pamper yourself guilt-free. It's not just about exercise; it's about celebrating each milestone, each achievement, with the sweetness that complements your active lifestyle. For every validated Strava activity, we happily offer you an additional chance to indulge in our treats, creating a perfect synergy between your fitness accomplishments and the joy of savoring our delightful creations. Join us in this unique experience where your dedication to a healthy, active life is not just acknowledged but celebrated with every tantalizing bite.
                         </p>
                     </section>
 
@@ -121,15 +126,15 @@ const Mission = () => {
                 <aside>
                     <h1>Other Eating Well Article</h1>
                     <div className="aside-info">
-                        <div className="article-advertise slide1">
-                            <img className='assets' src={tspsugar} alt="slide1"/>
+                        <div className="article-advertise">
+                            <img className='assets' src={tspsugar} alt="slide1" />
                             <p>What Happens to Your Body When You Have Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise slide2">
+                        <div className="article-advertise">
                             <img className='assets' src={tspsugar} alt="slide2" />
                             <p>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise slide3">
+                        <div className="article-advertise">
                             <img className='assets' src={tspsugar} alt="slide3" />
                             <p>Gluten free? Gotta be Nature&apos;s Bakery.</p>
                         </div>

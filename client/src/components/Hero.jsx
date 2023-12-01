@@ -12,7 +12,7 @@ const Hero = () => {
         <p className="hero-description">Classic Local x American baked goods and desserts like our world-famous banana pudding, cakes and cupcakes. Order them online to ship or pick up in-store.</p>
         <Link to="about-us" smooth={true} duration={500} className="hero-button-container">
           <p className="hero-button-text">Shop Now</p>
-        </Link>
+        </Link> 
       </div>
       <div className="hero-right">
         <img className="hero-cake" src={heroCake} alt="Hero Cake" />

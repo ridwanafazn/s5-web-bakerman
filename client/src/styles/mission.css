@@ -9,15 +9,16 @@
     width: 70%;  
     background-color:ghostwhite;  
     margin: 1vw;
-    
 }
 
-
+.assets {
+    margin: 1vw;
+}
 
 
 .mission-article{
     display:block;
-    margin: 5vw 5vw;
+    margin: 1vw 5vw;
     align-content: center;
 }
 
@@ -41,6 +42,7 @@
 }
 
 p {
+    margin-top: 1vw;
     font-family: 'Ambit', sans-serif;
     justify-content: center;
 }
@@ -53,6 +55,7 @@ p {
     object-fit: cover;
     max-width: 100%;
     height: auto;
+    
 }
 
 .right-mission {
@@ -60,6 +63,7 @@ p {
     background-color: ghostwhite;
     margin: 1vw 1vw;
     overflow: hidden; /* Menyembunyikan bagian yang melebihi container */
+    position: relative;
 }
 
 .aside-info {
@@ -75,24 +79,22 @@ p {
 }
 
 
-  .prev,
+.prev,
 .next {
-  cursor: pointer;
-  width: auto;
-  padding: 16px;
-  flex-direction:column;
-  justify-content: center;
-  color: black;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 .prev {
-  left: 0;
+  left: 10px;
 }
 
 .next {
-  right: 0;
+  right: 10px;
   border-radius: 3px 0 0 3px;
 }
 
