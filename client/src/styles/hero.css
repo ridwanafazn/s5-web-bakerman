@@ -1,7 +1,7 @@
 .hero-container {
   background: #F9F4F6;
   display: flex;
-  padding: 0 10vw;
+  padding: 0 8vw;
   height: 87vh;
 }
 
@@ -17,15 +17,16 @@
 .hero-right {
   width: 50%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   object-fit: cover;
 }
 
 .hero-cake {
-  height: 400px;
+  width: 100%;
   border-radius: 2px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
 }
 
 .hero-title {
@@ -61,8 +62,7 @@
   font-family: 'Marhey', sans-serif;      
   color: #FFFFFF;
   cursor: pointer;
-  /* align-items: center; Center vertically
-  justify-content: center; Center horizontally */
+  margin: 0 0;
 }
 
 
