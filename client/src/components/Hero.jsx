@@ -4,6 +4,7 @@ import '../styles/hero.css';
 
 import heroCake from '../assets/images/hero-cake.webp';
 
+// comment
 const Hero = () => {
   return (
     <div className="hero-container">
