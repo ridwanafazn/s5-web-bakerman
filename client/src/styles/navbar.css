@@ -30,7 +30,6 @@
 .navbar-mobile-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   color: #272727;
   background-color: #B8B8FF;
@@ -69,6 +68,7 @@
 
   .navbar-mobile-container {
     padding: 4vw;
+    position: absolute;
   }
 
   .navbar-text {

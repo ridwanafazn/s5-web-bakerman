@@ -2,56 +2,40 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/mission.css'
 import tspsugar from '../assets/images/article-mission/too-much-sugar.webp'
+import glutenfree from '../assets/images/article-mission/gluten-free.jpg'
+import insuline_res from '../assets/images/article-mission/insulineresistance.jpg'
+import meal_plan from '../assets/images/article-mission/meal-plan.webp'
+import { RiAdvertisementFill, RiAdvertisementLine } from 'react-icons/ri';
 
 
 
 
 
 const Mission = () => {
-    //pengen slideshow 
-    // const [slideIndex, setSlideIndex] = useState(1);
-
-    // const plusSlides = (n) => {
-    //     setSlideIndex((prevIndex) => prevIndex + n);
-    // };
-
-    // const showSlide = (n) => {
-    //     const slides = document.getElementsByClassName('article-advertise');
-    //     if (n > slides.length) {
-    //         setSlideIndex(1);
-    //     } else if (n < 1) {
-    //         setSlideIndex(slides.length);
-    //     } else {
-    //         setSlideIndex(n);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     showSlide(slideIndex);
-    // }, [slideIndex]);
-
-    // const showSlide = (n) => {
-    //     const slides = document.getElementsByClassName('article-advertise');
-    //     const info = document.querySelector('.aside-info');
-
-    //     if (n > slides.length) {
-    //         setSlideIndex(1);
-    //     } else if (n < 1) {
-    //         setSlideIndex(slides.length);
-    //     } else {
-    //         setSlideIndex(n);
-    //     }
-
-    //     // Mengatur transformasi berdasarkan indeks slide
-    //     info.style.transform = `translateX(${-100 * (slideIndex - 1)}%)`;
-    // };
-
     const [slideIndex, setSlideIndex] = useState(1);
 
-    const plusSlides = (n) => {
-        setSlideIndex((prevIndex) => prevIndex + n);
+    const showSlide = (n) => {
+        const slides = document.getElementsByClassName('article-advertise');
+        if (n > slides.length) {
+            setSlideIndex(1);
+        } else if (n < 1) {
+            setSlideIndex(slides.length);
+        } else {
+            setSlideIndex(n);
+        }
     };
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            showSlide(slideIndex + 1);
+        }, 3000); // Change slide every 5 seconds (adjust as needed)
+
+        return () => clearInterval(intervalId); // Cleanup on component unmount
+    }, [slideIndex]);
+
+    useEffect(() => {
+        showSlide(slideIndex);
+    }, [slideIndex]);
 
     return (
         <div className='mission-container'>
@@ -82,10 +66,10 @@ const Mission = () => {
                     <section className="fitness-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
                         <h2>Earn Sweet Treats with Every Stride.</h2>
                         <p>
-                        At the heart of our philosophy lies a steadfast belief in the harmonious balance between a fulfilling lifestyle and your well-being. Embrace a holistic approach to health by seamlessly integrating your Strava account into our community. This innovative connection not only adds a dynamic dimension to your fitness journey but also opens the door to a realm of delectable rewards.
+                            At the heart of our philosophy lies a steadfast belief in the harmonious balance between a fulfilling lifestyle and your well-being. Embrace a holistic approach to health by seamlessly integrating your Strava account into our community. This innovative connection not only adds a dynamic dimension to your fitness journey but also opens the door to a realm of delectable rewards.
                         </p>
                         <p>
-                        When you choose to synchronize your Strava activities with us, every stride, every endeavor, transforms into an opportunity to pamper yourself guilt-free. It's not just about exercise; it's about celebrating each milestone, each achievement, with the sweetness that complements your active lifestyle. For every validated Strava activity, we happily offer you an additional chance to indulge in our treats, creating a perfect synergy between your fitness accomplishments and the joy of savoring our delightful creations. Join us in this unique experience where your dedication to a healthy, active life is not just acknowledged but celebrated with every tantalizing bite.
+                            When you choose to synchronize your Strava activities with us, every stride, every endeavor, transforms into an opportunity to pamper yourself guilt-free. It's not just about exercise; it's about celebrating each milestone, each achievement, with the sweetness that complements your active lifestyle. For every validated Strava activity, we happily offer you an additional chance to indulge in our treats, creating a perfect synergy between your fitness accomplishments and the joy of savoring our delightful creations. Join us in this unique experience where your dedication to a healthy, active life is not just acknowledged but celebrated with every tantalizing bite.
                         </p>
                     </section>
 
@@ -125,23 +109,37 @@ const Mission = () => {
             <div className='right-mission'>
                 <aside>
                     <h1>Other Eating Well Article</h1>
-                    <div className="aside-info">
-                        <div className="article-advertise">
-                            <img className='assets' src={tspsugar} alt="slide1" />
-                            <p>What Happens to Your Body When You Have Insulin Resistance</p>
+                    <div className='aside-info'>
+                        <div className='article-advertise'>
+                            <img className='assets' src={insuline_res} alt='slide1' />
+                            <p className='aside-desc'>What Happens to Your Body When You Have Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise">
-                            <img className='assets' src={tspsugar} alt="slide2" />
-                            <p>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
+                        <div className='article-advertise'>
+                            <img className='assets' src={meal_plan} alt='slide2' />
+                            <p className='aside-desc'>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
                         </div>
-                        <div className="article-advertise">
-                            <img className='assets' src={tspsugar} alt="slide3" />
-                            <p>Gluten free? Gotta be Nature&apos;s Bakery.</p>
+                        <div className='article-advertise'>
+                            <img className='assets' src={glutenfree} alt='slide3' />
+                            <p className='aside-desc'>Gluten free? Gotta be Bakerman&apos;s Bakery.</p>
                         </div>
                     </div>
-                    <button className="prev" onClick={() => plusSlides(-1)}>&#10094;</button>
-                    <button className="next" onClick={() => plusSlides(1)}>&#10095;</button>
+                    {/* <button className='prev' onClick={() => showSlide(slideIndex - 1)}>
+                        &#10094;
+                    </button>
+                    <button className='next' onClick={() => showSlide(slideIndex + 1)}>
+                        &#10095;
+                    </button> */}
                 </aside>
+
+                <div className='advertisement'>
+                    <h1 className='add-title'>Advertisement</h1>
+                <RiAdvertisementFill className='add'>
+                </RiAdvertisementFill>
+
+                <RiAdvertisementLine className='add'>
+                </RiAdvertisementLine>
+                </div>
+                
             </div>
 
         </div>

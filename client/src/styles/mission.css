@@ -27,14 +27,18 @@
     display: flex;
     justify-content: center;
     font-size:xx-large;
+    position: static;
 }
 
 .right-mission h1 {
+    padding: 1vw 1vw;
     font-family: 'Marhey', sans-serif;   
     display: flex;
     justify-content: center;
     font-size:large;
     object-fit: cover;
+    position: static;
+    background-color: aquamarine;
 }
 
 .left-mission h2,h3 {
@@ -53,9 +57,9 @@ p {
     display: flex;
     justify-content: center;
     object-fit: cover;
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
-    
+    padding-top: 2vw;
 }
 
 .right-mission {
@@ -63,19 +67,25 @@ p {
     background-color: ghostwhite;
     margin: 1vw 1vw;
     overflow: hidden; /* Menyembunyikan bagian yang melebihi container */
-    position: relative;
+    text-align: center;
 }
 
 .aside-info {
     display: flex;
-    transition: transform 0.5s ease; /* Efek transisi untuk animasi perpindahan slide */
-    width: 300%; /* Mengatur lebar agar semua slide dapat muat */
+    flex-direction: column;
+    padding-bottom: 15vw;
 }
 
 .article-advertise {
     flex: 0 0 33.33%; /* Setiap item slide mengambil 33.33% lebar container */
     box-sizing: border-box;
     padding: 0 10px; /* Padding untuk menghindari teks berdekatan dengan tepi */
+}
+
+.aside-desc {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -101,6 +111,25 @@ p {
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.advertisement {
+  display: flex;
+  flex-direction: column;
+}
+
+.add {
+  padding-top: 1vw;
+  padding-bottom: 10vw;
+  display: flex;
+}
+
+.add-title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: aquamarine;
+  text-wrap:wrap;
 }
 
 @media screen and (max-width: 1024px) {

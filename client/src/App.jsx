@@ -51,10 +51,14 @@ function App() {
 
         </>} />
         <Route path="/signin" element={<>
+          <Navbar />
           <Login />
+          <Footer />
         </>} />
         <Route path="/signup" element={<>
+          <Navbar />
           <Signup />
+          <Footer />
         </>} />
       </Routes>
     </Router>
