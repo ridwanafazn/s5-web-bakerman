@@ -7,6 +7,12 @@
   font-family: 'Ambit', sans-serif; 
 }
 
+.category-boxes {
+  display: flex;
+  flex-direction: row;
+  padding: 1vw;
+}
+
 .button {
     display: flex;
 }
