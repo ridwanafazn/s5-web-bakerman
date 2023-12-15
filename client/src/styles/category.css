@@ -1,26 +1,160 @@
-.container, .category-container, .chance-container{
-  background: #F9F4F6;
-  display: flex;
-  padding: 2vw 5vw;
-  height: 87vh;
-  justify-content: center;
-  font-family: 'Ambit', sans-serif; 
-}
+  .category-container {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 8vw;
+  }
 
-.category-boxes {
-  display: flex;
-  flex-direction: row;
-  padding: 1vw;
-}
+  .category-title {
+    font-size: 2em;
+    margin-bottom: 12px;
 
-.button {
+  }
+
+
+  .category-boxes {
     display: flex;
-}
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 
-h1 {
-  font-family: 'Marhey', sans-serif; 
-}
+  .category-box {
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+  }
 
-p {
-  font-family: 'Ambit', sans-serif; 
-}
+
+
+
+  .category-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .category-item {
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .category-item img {
+    width: 100%;
+    max-height: 150px;
+    /* Adjust the maximum height as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    /* Optional: Add border radius for rounded corners */
+    margin-bottom: 10px;
+
+    height: auto;
+  }
+
+  
+
+  .category-item p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10;
+  }
+
+  .show-all-products {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+    /* Optional: Add your preferred link color */
+  }
+
+
+
+
+  .hero {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .hero-banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vw;
+  }
+
+  .hero-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .banner-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    /* Set the text color to match your design */
+    font-size: 18px;
+  }
+
+
+
+
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+
+    .category-grid {
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 4vw;
+      margin-bottom: 4vw;
+    }
+
+    .category-item img {
+      width: 100%;
+      height: 100%;
+      /* Adjust this value to set the desired aspect ratio */
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: auto;
+      margin-bottom: 8vw;
+    }
+  }
