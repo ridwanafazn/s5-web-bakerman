@@ -1,56 +1,6 @@
-// import React from 'react';
-// import '../styles/auth.css'
 import { FaGoogle } from 'react-icons/fa'
-
 import '../styles/auth.css'
-// import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// import { auth } from '../authentication/firebase';
-
-
-
-
-// const Login = () => {
-//     const createWithGoogle = () => {
-//         const provider = new GoogleAuthProvider();
-//         signInWithPopup(auth, provider)
-//             .then((result) => {
-//                 // This gives you a Google Access Token. You can use it to access the Google API.
-//                 const credential = GoogleAuthProvider.credentialFromResult(result);
-//                 const token = credential.accessToken;
-//                 // The signed-in user info.
-//                 const user = result.user;
-//                 // IdP data available using getAdditionalUserInfo(result)
-//                 // ...
-//             }).catch((error) => {
-//                 // Handle Errors here.
-//                 const errorCode = error.code;
-//                 const errorMessage = error.message;
-//                 // The email of the user's account used.
-//                 const email = error.customData.email;
-//                 // The AuthCredential type that was used.
-//                 const credential = GoogleAuthProvider.credentialFromError(error);
-//                 // ...
-//             });
-//     }
-
-
-//     const user = auth.currentUser;
-
-//     return (
-        // <div className='login-container'>
-        //     <body>
-        //         <button className="Button" onClick={createWithGoogle}><FaGoogle />Login</button>
-        //         <p>
-        //             {user.displayName}
-        //         </p>
-        //     </body>
-        // </div>
-
-
-//     );
-// };
-
-// export default Login;
+import '../styles/signin.css'
 
 import { useState } from "react";
 import { auth } from "../authentication/firebase";
@@ -97,9 +47,15 @@ const Login = () => {
             });
     }
     const user = auth.currentUser;
+
+    
     return (
         <div className="container">
+
             <div className="row justify-content-center">
+                <div className='hero'>
+                    <h1>Sign In Here</h1>
+                </div>
                 <form className="col-md-4 mt-3 pt-3 pb-3">
                     {"" !== notice &&
                         <div className="alert alert-warning" role="alert">
@@ -122,11 +78,15 @@ const Login = () => {
                     </div>
                 </form>
                 <body>
-                <button className="Button" onClick={createWithGoogle}><FaGoogle /> Sign with Google</button>
-            </body>
+                    <button className="Button" onClick={createWithGoogle}><FaGoogle /> Sign with Google</button>
+                </body>
+                <div className="demo-info">
+                    <p>Use the account below for demonstration purposes</p>
+                    <p>Email address : bakerman@gmail.com</p>
+                    <p>Password      : bakermanAdmin</p>
+                </div>
             </div>
-            
-                    
+
         </div>
     )
 }
