@@ -157,4 +157,12 @@
       height: auto;
       margin-bottom: 8vw;
     }
+    .category-container {
+      max-width: 100%;
+      min-height: 87vh;
+      margin: auto;
+      text-align: center;
+      justify-content: center;
+      margin-bottom: 8vw;
+    }
   }
