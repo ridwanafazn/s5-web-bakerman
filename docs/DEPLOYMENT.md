@@ -68,6 +68,38 @@ Catatan:
 
 ---
 
+## 2B. Cloudflare Pages (Frontend)
+
+Frontend sudah live:
+
+- **https://bakerman.ridwanafazn.my.id**
+- **https://bakerman-balance.pages.dev**
+
+Konfigurasi:
+
+- Project: `bakerman-balance`
+- Source: GitHub `ridwanafazn/s5-web-bakerman`
+- Production branch: `main`
+- Root: `client`
+- Build command: `npm run build`
+- Output: `dist`
+- Env: `VITE_API_URL=https://merchants-publishing-release-retained.trycloudflare.com/api`
+
+Custom domain:
+
+- `bakerman.ridwanafazn.my.id`
+- CNAME `bakerman` → `bakerman-balance.pages.dev` (proxied)
+- Status: active
+
+Catatan penting:
+
+- Frontend di Pages adalah hosting statis Cloudflare.
+- API Express + MongoDB **tidak** jalan di Workers free plan; API saat ini lewat Cloudflare Quick Tunnel ke Docker lokal.
+- Untuk API cloud permanen: Vercel/Render/VPS, atau Cloudflare Workers Paid + Containers.
+- Jika URL API berubah, update `VITE_API_URL` di Pages lalu rebuild.
+
+---
+
 ## 2. MongoDB Atlas Cloud
 
 1. Login <https://cloud.mongodb.com>.

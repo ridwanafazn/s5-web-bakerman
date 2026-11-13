@@ -3,8 +3,10 @@
 Full-stack bakery pre-order app: React storefront + Express/MongoDB API.
 Arah produk: **Bakerman Balance** — budget gula mingguan, transparansi gula, reward aktivitas Strava, pickup-only Bandung.
 
-> **Status:** Fase 7 (alternatif Strava: aktivitas manual + screenshot Cloudinary + auto-delete 7 hari) selesai.
-> Docker stack production-like dan E2E tetap hijau. Deploy cloud masih menunggu kredensial; Strava asli opsional.
+> **Status:** Fase 8 (UI fix + Cloudflare Pages + commit/push) selesai.
+> Frontend live di **https://bakerman.ridwanafazn.my.id** (Cloudflare Pages). API masih via Cloudflare Tunnel ke Docker lokal.
+
+> **Live:** <https://bakerman.ridwanafazn.my.id> · **Pages:** <https://bakerman-balance.pages.dev>
 
 ## Stack
 
@@ -68,8 +70,8 @@ server/
 docs/
   PRD-bakerman-balance.md
   DATA-MODEL-AND-API.md
-  PHASE-1-REPORT.md … PHASE-7-REPORT.md
-  GUIDE-PHASE-2.md … GUIDE-PHASE-7.md
+  PHASE-1-REPORT.md … PHASE-8-REPORT.md
+  GUIDE-PHASE-2.md … GUIDE-PHASE-8.md
   DEV-ACCESS.md
   DEPLOYMENT.md
 docker-compose.yml        MongoDB Atlas Local (dev)
@@ -159,7 +161,15 @@ docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm ru
 - `STRAVA_DEMO_MODE=false` dipaksa di production.
 - Aktivitas manual butuh `CLOUDINARY_*`; tanpa itu form disabled (503).
 
-Panduan lengkap: `docs/GUIDE-PHASE-6.md` dan `docs/DEPLOYMENT.md`.
+## Cloudflare Pages (Frontend)
+
+- Production: **https://bakerman.ridwanafazn.my.id**
+- Pages default: <https://bakerman-balance.pages.dev>
+- Project: `bakerman-balance` (GitHub source, root `client`, build `npm run build`, output `dist`).
+- Env Pages: `VITE_API_URL=https://merchants-publishing-release-retained.trycloudflare.com/api`
+- API masih Express/MongoDB di Docker lokal yang diekspos lewat Cloudflare Tunnel; belum hosted penuh di Cloudflare compute.
+
+Panduan lengkap: `docs/GUIDE-PHASE-8.md`, `docs/GUIDE-PHASE-6.md`, dan `docs/DEPLOYMENT.md`.
 
 ## Test & CI
 
@@ -237,11 +247,13 @@ Akan dihapus setelah UI migrasi ke v1.
 - `docs/PHASE-5-REPORT.md` — laporan implementasi Fase 5
 - `docs/PHASE-6-REPORT.md` — laporan implementasi Fase 6
 - `docs/PHASE-7-REPORT.md` — laporan implementasi Fase 7
+- `docs/PHASE-8-REPORT.md` — laporan implementasi Fase 8
 - `docs/GUIDE-PHASE-2.md` — panduan mencoba hasil Fase 2
 - `docs/GUIDE-PHASE-3.md` — panduan mencoba hasil Fase 3
 - `docs/GUIDE-PHASE-4.md` — panduan mencoba hasil Fase 4
 - `docs/GUIDE-PHASE-5.md` — panduan mencoba hasil Fase 5
 - `docs/GUIDE-PHASE-6.md` — panduan mencoba hasil Fase 6
 - `docs/GUIDE-PHASE-7.md` — panduan mencoba hasil Fase 7
+- `docs/GUIDE-PHASE-8.md` — panduan mencoba hasil Fase 8
 - `docs/DEV-ACCESS.md` — link publik/tunnel & troubleshooting akses dari HP
 - `docs/DEPLOYMENT.md` — panduan deploy Atlas + Vercel + Firebase + Cloudinary + Docker

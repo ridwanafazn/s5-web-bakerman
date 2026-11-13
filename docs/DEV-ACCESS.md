@@ -6,6 +6,15 @@ Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, serta 
 
 ## Link Publik Saat Ini
 
+### 0. Cloudflare Pages — frontend production
+
+**https://bakerman.ridwanafazn.my.id**
+
+- Static frontend benar-benar hosted di Cloudflare Pages.
+- Pages default: **https://bakerman-balance.pages.dev**
+- API memanggil Cloudflare Tunnel ke Docker lokal.
+- Login/API sudah diuji dari domain ini: budget 66 g, recap, menu 10 produk, 0 console error.
+
 ### 1. Production-like Docker stack
 
 **https://merchants-publishing-release-retained.trycloudflare.com**

@@ -572,7 +572,7 @@ Karena brand fiktif, rollout ini berfungsi sebagai **skenario go-to-market** dal
 | 7 | Polish | UI/UX, a11y, performa, SEO, copy, hapus kredensial demo dari UI | 2 hari |
 | 8 | Test & deploy | Unit/API/E2E, CI, Docker/deploy, Atlas Cloud | 2–3 hari |
 
-> **Status implementasi (14 Nov 2026):** Fase build 1–7 di log implementasi selesai. Fase 5 mencakup recap mingguan, filter/pagination order, polish a11y, performa, SEO, E2E, dan CI. Fase 6 mencakup validasi env production, readiness/logging, Dockerfile, nginx, Compose production, dan smoke test. Fase 7 mencakup alternatif Strava: aktivitas manual + screenshot Cloudinary + auto-delete 7 hari. Deploy cloud masih menunggu kredensial Atlas/Firebase/Vercel; Strava asli opsional (butuh langganan Strava). Lihat `docs/PHASE-7-REPORT.md`.
+> **Status implementasi (14 Nov 2026):** Fase build 1–8 di log implementasi selesai. Fase 5 recap/polish/SEO/E2E/CI, Fase 6 production hardening/Docker, Fase 7 alternatif Strava (aktivitas manual + Cloudinary), Fase 8 UI fix + Cloudflare Pages + commit/push. Frontend live di `https://bakerman.ridwanafazn.my.id`; API masih lewat Cloudflare Tunnel ke Docker lokal. Deploy API permanen dan Strava asli masih opsional/manual. Lihat `docs/PHASE-8-REPORT.md`.
 
 **Total:** ~16–21 hari kerja untuk versi portfolio lengkap.
 

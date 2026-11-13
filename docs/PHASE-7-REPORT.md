@@ -232,8 +232,10 @@ client build → sukses
 
 ## 6. Langkah Berikutnya
 
+> ✅ **Fase 8 selesai:** UI landing diperbaiki, frontend live di Cloudflare Pages + domain custom, commit/push. Lihat `docs/PHASE-8-REPORT.md`.
+
 1. Buat akun Cloudinary + isi kredensial production.
 2. Set `CLOUDINARY_MOCK=false`, `CRON_SECRET`, dan redeploy.
 3. Tes upload asli + cek Media Library + cleanup.
 4. Opsional: review staff/approval aktivitas manual.
-5. Deploy cloud (Atlas + Vercel) saat kredensial siap.
+5. Deploy cloud API permanen (Vercel/Render/VPS/Cloudflare Containers).
