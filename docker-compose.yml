@@ -1,0 +1,21 @@
+services:
+  mongo:
+    image: mongodb/mongodb-atlas-local:latest
+    container_name: bakerman-mongo
+    hostname: bakerman-mongo
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - bakerman-mongo-data:/data/db
+      - bakerman-mongo-configdb:/data/configdb
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  bakerman-mongo-data:
+  bakerman-mongo-configdb:

@@ -1,0 +1,80 @@
+name: bakerman-prod
+
+services:
+  mongo:
+    image: mongodb/mongodb-atlas-local:latest
+    container_name: bakerman-prod-mongo
+    restart: unless-stopped
+    volumes:
+      - bakerman-prod-mongo-data:/data/db
+      - bakerman-prod-mongo-configdb:/data/configdb
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  api:
+    build:
+      context: ./server
+    container_name: bakerman-prod-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5050
+      MONGODB_URI: mongodb://mongo:27017/bakerman?directConnection=true
+      CORS_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:8080}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:-bakerman-mern}
+      FIREBASE_SERVICE_ACCOUNT: ${FIREBASE_SERVICE_ACCOUNT:-}
+      ADMIN_EMAILS: ${ADMIN_EMAILS:-bakerman@gmail.com}
+      STAFF_EMAILS: ${STAFF_EMAILS:-qa.bakerman.101126@gmail.com}
+      APP_TIMEZONE: Asia/Jakarta
+      TOKEN_ENCRYPTION_KEY: ${TOKEN_ENCRYPTION_KEY:?Set TOKEN_ENCRYPTION_KEY (64 hex chars) before starting}
+      STRAVA_CLIENT_ID: ${STRAVA_CLIENT_ID:-}
+      STRAVA_CLIENT_SECRET: ${STRAVA_CLIENT_SECRET:-}
+      STRAVA_REDIRECT_URI: ${STRAVA_REDIRECT_URI:-http://localhost:8080/api/v1/strava/callback}
+      STRAVA_DEMO_MODE: "false"
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+      CLOUDINARY_FOLDER: ${CLOUDINARY_FOLDER:-bakerman/manual-activities}
+      CLOUDINARY_MOCK: ${CLOUDINARY_MOCK:-false}
+      MANUAL_ACTIVITY_SCREENSHOT_DAYS: ${MANUAL_ACTIVITY_SCREENSHOT_DAYS:-7}
+      MANUAL_ACTIVITY_MAX_MB: ${MANUAL_ACTIVITY_MAX_MB:-5}
+      CRON_SECRET: ${CRON_SECRET:-}
+      DISABLE_CLOUDINARY_CLEANUP_JOB: "false"
+      LOG_REQUESTS: "true"
+      TRUST_PROXY: "1"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5050/health').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  client:
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: ${VITE_API_URL:-}
+    container_name: bakerman-prod-client
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  bakerman-prod-mongo-data:
+  bakerman-prod-mongo-configdb:

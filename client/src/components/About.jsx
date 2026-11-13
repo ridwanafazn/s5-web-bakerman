@@ -1,47 +1,66 @@
-import React from "react";
+import { Link } from 'react-router-dom';
+
 import '../styles/about.css';
+import Official from '../assets/images/official-store.jpg';
+import Offline from '../assets/images/offline-bakery.jpg';
+import Reseller from '../assets/images/online-reseller-850x550.jpg';
 
-import Official from '../assets/images/official-store.jpg'
-import Offline from '../assets/images/offline-bakery.jpg'
-import Reseller from '../assets/images/online-reseller-850x550.jpg'
+const steps = [
+  {
+    image: Official,
+    alt: 'Atur budget gula',
+    caption: '1. Atur budget',
+    description: 'Pilih preset 60, 90, atau 120 g gula per minggu.',
+    to: '/balance',
+  },
+  {
+    image: Reseller,
+    alt: 'Pilih treat dengan label gula',
+    caption: '2. Pilih treat',
+    description: 'Lihat gula per porsi dan tambahkan ke keranjang.',
+    to: '/menu',
+  },
+  {
+    image: Offline,
+    alt: 'Pickup di Bakerman Dago',
+    caption: '3. Pickup',
+    description: 'Ambil pesananmu di Bakerman Dago, Bandung.',
+    to: '/menu',
+  },
+];
 
-const About = () => {
+export default function About() {
   return (
-    <div className="about-container" id="about-us">
+    <section className="about-container" id="about-us">
       <div className="about-box">
         <div className="about-left-container">
-          <div className="about-title-container">
-            <p className="about-title">Shopping Options</p>
-          </div>
+          <p className="about-eyebrow">Cara kerja</p>
+          <h2 className="about-title">Dessert tetap bisa dinikmati dengan sadar.</h2>
           <p className="about-description">
-            We make it easy for you to get Bakerman Bakery’s best, wherever you are. Order now for nationwide shipping, place an order to pickup at your local shop, or get in touch with our team to arrange custom catering for your next event.
+            Bakerman Balance bukan diet. Ini alat bantu sederhana: transparansi
+            gula, budget mingguan, dan reward aktivitas yang segera hadir.
           </p>
+          <Link to="/menu" className="about-cta">
+            Mulai pilih menu
+          </Link>
         </div>
+
         <div className="about-right-container">
-          <div className="about-image-container">
-            <a href="https://www.tokopedia.com/misolpastry" target="_blank" rel="noopener noreferrer">
-              <img className="about-making-cake" src={Official} alt="Official Store" />
-            </a>
-            <p className="image-caption">Official Store</p>
-          </div>
-
-          <div className="about-image-container">
-            <a href="/near-online-reseller">
-              <img className="about-making-cake" src={Reseller} alt="Near Online Reseller" />
-            </a>
-            <p className="image-caption">Near Online Reseller</p>
-          </div>
-
-          <div className="about-image-container">
-            <a href="/visit-offline-store">
-              <img className="about-making-cake" src={Offline} alt="Visit Offline Store" />
-            </a>
-            <p className="image-caption">Visit Offline Store</p>
-          </div>
+          {steps.map((step) => (
+            <Link key={step.caption} to={step.to} className="about-image-container">
+              <img
+                className="about-making-cake"
+                src={step.image}
+                alt={step.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="image-caption">{step.caption}</p>
+              <p className="about-step-description">{step.description}</p>
+            </Link>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default About;
+}

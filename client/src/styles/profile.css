@@ -1,0 +1,89 @@
+.profile-page {
+  background: #f9f4f6;
+  min-height: 100vh;
+  padding: 2.5rem 6vw 5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 560px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
+  text-align: center;
+}
+
+.profile-eyebrow {
+  font-family: 'Ambit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: #8a6a4f;
+  margin: 0 0 0.6rem;
+}
+
+.profile-title {
+  font-family: 'Marhey', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  color: #272727;
+  margin: 0 0 1rem;
+}
+
+.profile-text {
+  font-family: 'Ambit', sans-serif;
+  color: #5f5f5f;
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.profile-button {
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.95rem;
+  background: #272727;
+  color: #f9f4f6;
+  border: 2px solid #272727;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #4a1d1f;
+  border-color: #4a1d1f;
+  transform: translateY(-2px);
+}
+
+.profile-button-outline {
+  background: transparent;
+  color: #272727;
+}
+
+.profile-button-outline:hover {
+  background: #272727;
+  color: #f9f4f6;
+  border-color: #272727;
+}
+
+@media screen and (max-width: 640px) {
+  .profile-page {
+    padding: 7rem 5vw 4rem;
+  }
+
+  .profile-card {
+    padding: 2.25rem 1.5rem;
+  }
+}

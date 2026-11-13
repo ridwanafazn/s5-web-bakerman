@@ -1,0 +1,841 @@
+/* Shared Phase 2 components: sugar badges, budget bar, product detail, cart, balance */
+
+.sugar-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sugar-badge strong {
+  font-size: 0.8rem;
+}
+
+.sugar-light {
+  background: #e7f6ee;
+  color: #1e6b45;
+}
+
+.sugar-balanced {
+  background: #eef6d8;
+  color: #4d6b1e;
+}
+
+.sugar-indulgent {
+  background: #fff1d6;
+  color: #8a5a12;
+}
+
+.sugar-extra {
+  background: #fdecea;
+  color: #a4271f;
+}
+
+/* Budget bar */
+
+.budget-bar {
+  max-width: 1180px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 24px rgba(39, 39, 39, 0.07);
+  box-sizing: border-box;
+}
+
+.budget-bar-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: 'Ambit', sans-serif;
+}
+
+.budget-bar-copy strong {
+  font-size: 0.95rem;
+  color: #272727;
+}
+
+.budget-bar-copy span {
+  font-size: 0.78rem;
+  color: #7a7a7a;
+}
+
+.budget-bar-track {
+  flex: 1;
+  height: 10px;
+  background: #efe7e1;
+  border-radius: 999px;
+  overflow: hidden;
+  min-width: 100px;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #bae8d4, #8fd3b3);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.budget-bar-over .budget-bar-fill {
+  background: #d9534f;
+}
+
+.budget-bar-link {
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.85rem;
+  color: #272727;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.budget-bar-link:hover {
+  color: #4a1d1f;
+}
+
+.budget-bar-guest {
+  justify-content: space-between;
+  font-family: 'Ambit', sans-serif;
+  color: #5f5f5f;
+  font-size: 0.9rem;
+}
+
+.budget-bar-loading {
+  font-family: 'Ambit', sans-serif;
+  color: #7a7a7a;
+  font-size: 0.9rem;
+}
+
+/* Product detail */
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.product-detail-media {
+  position: sticky;
+  top: 100px;
+}
+
+.product-detail-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(39, 39, 39, 0.14);
+  display: block;
+}
+
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-detail-back {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.85rem;
+  color: #6a6a6a;
+  text-decoration: none;
+}
+
+.product-detail-back:hover {
+  color: #272727;
+}
+
+.product-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.product-detail-title {
+  font-family: 'Marhey', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  color: #272727;
+  margin: 0;
+}
+
+.product-detail-description {
+  font-family: 'Ambit', sans-serif;
+  color: #5f5f5f;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.product-detail-price {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.5rem;
+  color: #4a1d1f;
+  margin: 0;
+}
+
+.product-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.product-detail-label {
+  display: block;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8a8a8a;
+  margin-bottom: 0.2rem;
+}
+
+.product-detail-meta strong {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.85rem;
+  color: #272727;
+}
+
+.product-detail-section h2 {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  color: #272727;
+}
+
+.product-detail-section p {
+  font-family: 'Ambit', sans-serif;
+  color: #5f5f5f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.product-detail-buy {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.product-detail-add {
+  background: #272727;
+  color: #f9f4f6;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 220px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.product-detail-add:hover {
+  background: #4a1d1f;
+  transform: translateY(-2px);
+}
+
+.product-detail-success {
+  font-family: 'Ambit', sans-serif;
+  color: #1e6b45;
+  margin: 0;
+}
+
+.product-detail-success a {
+  color: #1e6b45;
+  font-weight: 700;
+}
+
+.product-detail-budget {
+  background: #bae8d4;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  font-family: 'Ambit', sans-serif;
+  color: #143d2d;
+}
+
+.product-detail-budget.is-over {
+  background: #fdecea;
+  color: #a4271f;
+}
+
+.product-detail-budget p {
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #e3d9d1;
+  border-radius: 999px;
+  padding: 0.25rem;
+}
+
+.qty-stepper button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #f3ece7;
+  color: #272727;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.qty-stepper span {
+  min-width: 1.5rem;
+  text-align: center;
+  font-family: 'Ambit', sans-serif;
+  font-weight: 600;
+}
+
+/* Cart */
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) auto auto auto;
+  gap: 1rem;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(39, 39, 39, 0.07);
+}
+
+.cart-item-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.cart-item-name {
+  font-family: 'Marhey', sans-serif;
+  color: #272727;
+  text-decoration: none;
+}
+
+.cart-item-meta {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.8rem;
+  color: #7a7a7a;
+}
+
+.cart-item-total {
+  font-family: 'Marhey', sans-serif;
+  color: #4a1d1f;
+  white-space: nowrap;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: #a4271f;
+  font-family: 'Ambit', sans-serif;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.cart-clear {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #7a7a7a;
+  font-family: 'Ambit', sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.cart-summary {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
+  position: sticky;
+  top: 100px;
+}
+
+.cart-summary h2 {
+  font-family: 'Marhey', sans-serif;
+  margin: 0 0 1rem;
+  color: #272727;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Ambit', sans-serif;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #f1eae5;
+  font-size: 0.9rem;
+}
+
+.cart-summary-row.is-over {
+  color: #a4271f;
+  font-weight: 700;
+}
+
+.cart-warning {
+  font-family: 'Ambit', sans-serif;
+  background: #fff1d6;
+  color: #8a5a12;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.cart-login-hint {
+  font-family: 'Ambit', sans-serif;
+  color: #6a6a6a;
+  font-size: 0.9rem;
+}
+
+.cart-checkout {
+  width: 100%;
+  margin-top: 1rem;
+  background: #272727;
+  color: #f9f4f6;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem;
+  font-family: 'Marhey', sans-serif;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cart-note {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.75rem;
+  color: #8a8a8a;
+  margin: 0.5rem 0 0;
+  line-height: 1.4;
+}
+
+/* Balance */
+
+.balance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.balance-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
+}
+
+.balance-label {
+  font-family: 'Ambit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: #8a8a8a;
+  margin: 0 0 0.25rem;
+}
+
+.balance-big {
+  font-family: 'Marhey', sans-serif;
+  font-size: 3rem;
+  color: #4a1d1f;
+  margin: 0;
+  line-height: 1;
+}
+
+.balance-big.is-over {
+  color: #a4271f;
+}
+
+.balance-muted {
+  font-family: 'Ambit', sans-serif;
+  color: #6a6a6a;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.balance-track {
+  margin: 1rem 0;
+  height: 12px;
+  background: #efe7e1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.balance-warning {
+  font-family: 'Ambit', sans-serif;
+  background: #fdecea;
+  color: #a4271f;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.balance-menu-link {
+  margin-top: 1rem;
+}
+
+.balance-presets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.balance-preset {
+  border: 1px solid #e3d9d1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Ambit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.balance-preset.is-active {
+  border-color: #272727;
+  background: #f9f4f6;
+  box-shadow: inset 0 0 0 2px #272727;
+}
+
+.balance-preset strong {
+  font-family: 'Marhey', sans-serif;
+  color: #272727;
+}
+
+.balance-preset span {
+  font-size: 0.8rem;
+  color: #4a1d1f;
+}
+
+.balance-preset small {
+  font-size: 0.7rem;
+  color: #8a8a8a;
+}
+
+.balance-subheading {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #272727;
+}
+
+.balance-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.balance-mode {
+  border: 1px solid #e3d9d1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Ambit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.balance-mode.is-active {
+  border-color: #272727;
+  background: #f9f4f6;
+  box-shadow: inset 0 0 0 2px #272727;
+}
+
+.balance-mode strong {
+  font-family: 'Marhey', sans-serif;
+  color: #272727;
+}
+
+.balance-mode span {
+  font-size: 0.8rem;
+  color: #6a6a6a;
+  line-height: 1.4;
+}
+
+.balance-message {
+  font-family: 'Ambit', sans-serif;
+  color: #1e6b45;
+  background: #e7f6ee;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.balance-strava {
+  grid-column: 1 / -1;
+}
+
+.balance-soon {
+  display: inline-block;
+  background: #b8b8ff;
+  color: #272727;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 900px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-detail-media {
+    position: static;
+  }
+
+  .product-detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .balance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-strava {
+    grid-column: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .budget-bar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .budget-bar-track {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .cart-item {
+    grid-template-columns: 70px minmax(0, 1fr) auto;
+    grid-template-areas:
+      'image info remove'
+      'image qty total';
+    row-gap: 0.5rem;
+  }
+
+  .cart-item-image {
+    grid-area: image;
+    width: 70px;
+    height: 70px;
+  }
+
+  .cart-item-info {
+    grid-area: info;
+  }
+
+  .cart-item .qty-stepper {
+    grid-area: qty;
+    justify-self: start;
+  }
+
+  .cart-item-total {
+    grid-area: total;
+    justify-self: end;
+  }
+
+  .cart-item-remove {
+    grid-area: remove;
+    justify-self: end;
+  }
+
+  .balance-presets {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-modes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Strava reward card */
+.balance-strava-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.balance-connected {
+  display: inline-block;
+  background: #e7f6ee;
+  color: #1e6b45;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.balance-strava-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.balance-strava-stats span {
+  display: block;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a8a8a;
+  margin-bottom: 0.15rem;
+}
+
+.balance-strava-stats strong {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.15rem;
+  color: #272727;
+}
+
+.balance-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.balance-tiers span {
+  background: #f3ece7;
+  color: #6a6a6a;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.72rem;
+}
+
+.balance-tiers span.is-reached {
+  background: #bae8d4;
+  color: #143d2d;
+  font-weight: 700;
+}
+
+.balance-strava-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.balance-secondary {
+  background: transparent;
+  color: #272727;
+  border: 1px solid #272727;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.balance-secondary:hover:not(:disabled) {
+  background: #272727;
+  color: #f9f4f6;
+}
+
+.balance-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.balance-demo {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #efe7e1;
+}
+
+.balance-inline-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: 'Ambit', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.balance-strava code {
+  background: #f3ece7;
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.78rem;
+}
+
+@media screen and (max-width: 640px) {
+  .balance-strava-head {
+    flex-direction: column;
+  }
+
+  .balance-strava-stats {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}

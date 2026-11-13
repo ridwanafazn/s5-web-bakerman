@@ -1,66 +1,240 @@
-/* chance.css */
+.chance-page {
+  background: #f9f4f6;
+  min-height: 100vh;
+  padding: 2.5rem 6vw 5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
 
-.chance-container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+.chance-hero {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.chance-eyebrow {
+  font-family: 'Ambit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: #8a6a4f;
+  margin: 0 0 0.6rem;
+}
+
+.chance-title {
+  font-family: 'Marhey', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  color: #272727;
+  margin: 0 0 0.6rem;
+}
+
+.chance-subtitle {
+  font-family: 'Ambit', sans-serif;
+  color: #5f5f5f;
+  margin: 0;
+}
+
+.chance-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
+}
+
+.chance-card h2 {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.25rem;
+  color: #272727;
+  margin: 0 0 0.5rem;
+}
+
+.chance-muted {
+  font-family: 'Ambit', sans-serif;
+  color: #6a6a6a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.chance-login {
+  text-align: center;
+}
+
+.chance-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.chance-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem;
+}
+
+.chance-stat-value {
+  font-family: 'Marhey', sans-serif;
+  font-size: 2.5rem;
+  color: #4a1d1f;
+  line-height: 1;
+}
+
+.chance-stat-label {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.85rem;
+  color: #7a7a7a;
+}
+
+.chance-button {
+  display: inline-block;
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.95rem;
+  background: #272727;
+  color: #f9f4f6;
+  border: 2px solid #272727;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.chance-button:hover:not(:disabled) {
+  background: #4a1d1f;
+  border-color: #4a1d1f;
+  transform: translateY(-2px);
+}
+
+.chance-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.chance-button-outline {
+  background: transparent;
+  color: #272727;
+}
+
+.chance-button-outline:hover:not(:disabled) {
+  background: #272727;
+  color: #f9f4f6;
+  border-color: #272727;
+}
+
+.chance-code-box {
+  background: #bae8d4;
+  border-radius: 18px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.chance-code-label {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1e5540;
+  margin: 0 0 0.4rem;
+}
+
+.chance-code {
+  font-family: 'Marhey', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.25em;
+  color: #143d2d;
+  margin: 0 0 1rem;
+  word-break: break-all;
+}
+
+.chance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.chance-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.chance-form input {
+  flex: 1 1 260px;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd2ca;
+  border-radius: 999px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.chance-form input:focus {
+  border-color: #272727;
+}
+
+.chance-alert {
+  font-family: 'Ambit', sans-serif;
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin: 0;
+}
+
+.chance-alert-error {
+  background: #fdecea;
+  color: #a4271f;
+}
+
+.chance-alert-success {
+  background: #e7f6ee;
+  color: #1e6b45;
+}
+
+.chance-table-wrap {
+  overflow-x: auto;
+}
+
+.chance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.9rem;
+}
+
+.chance-table th,
+.chance-table td {
+  text-align: left;
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #efe7e1;
+}
+
+.chance-table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a8a8a;
+}
+
+.chance-table td {
+  color: #3d3d3d;
+}
+
+@media screen and (max-width: 640px) {
+  .chance-page {
+    padding: 7rem 5vw 4rem;
   }
-  
-  section {
-    margin-bottom: 20px;
+
+  .chance-card {
+    padding: 1.35rem 1.35rem;
   }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
+
+  .chance-stats {
+    grid-template-columns: 1fr;
   }
-  
-  p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Add more styles as needed */
-  
+}

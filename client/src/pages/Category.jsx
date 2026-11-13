@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/category.css';
 
@@ -23,13 +22,18 @@ const Category = () => {
   return (
     <div className="category-container">
       <div className="hero-banner">
-        <img src={bannerCategory} alt="Banner" />
+        <img src={bannerCategory} alt="Banner" loading="lazy" decoding="async" />
       </div>
 
       <div className="category-grid">
         {categories.map((category) => (
           <Link key={category.name} to={category.link} className="category-item">
-            <img src={category.imageSrc} alt={category.name} />
+            <img
+              src={category.imageSrc}
+              alt={category.name}
+              loading="lazy"
+              decoding="async"
+            />
             <p>{category.name}</p>
           </Link>
         ))}

@@ -1,25 +1,43 @@
-import React from "react";
-import { Link } from "react-scroll";
-import '../styles/hero.css';
+import { Link } from 'react-router-dom';
 
+import '../styles/hero.css';
 import heroCake from '../assets/images/hero-cake.webp';
 
-// comment
-const Hero = () => {
+export default function Hero() {
   return (
-    <div className="hero-container">
+    <section className="hero-container">
       <div className="hero-left">
-        <p className="hero-title">Bakerman is now in Grocery Stores!</p>
-        <p className="hero-description">Classic Local x American baked goods and desserts like our world-famous banana pudding, cakes and cupcakes. Order them online to ship or pick up in-store.</p>
-        <Link to="about-us" smooth={true} duration={500} className="hero-button-container">
-          <p className="hero-button-text">Shop Now</p>
-        </Link> 
-      </div>
-      <div className="hero-right">
-        <img className="hero-cake" src={heroCake} alt="Hero Cake" />
-      </div>
-    </div>
-  );
-};
+        <p className="hero-eyebrow">Bakerman Balance · Bandung</p>
+        <h1 className="hero-title">Nikmati manisnya. Jaga progresnya.</h1>
+        <p className="hero-description">
+          Bakery pre-order dengan gula transparan. Atur budget gula mingguan,
+          pilih treat favoritmu, lalu pickup di Bakerman Dago.
+        </p>
 
-export default Hero;
+        <div className="hero-actions">
+          <Link to="/menu" className="hero-cta">
+            Lihat menu minggu ini
+          </Link>
+          <Link to="/balance" className="hero-cta hero-cta-secondary">
+            Atur budget
+          </Link>
+        </div>
+
+        <ul className="hero-pills" aria-label="Keunggulan Bakerman Balance">
+          <li>Budget 60–120 g/minggu</li>
+          <li>Label gula transparan</li>
+          <li>Pickup di Dago</li>
+        </ul>
+      </div>
+
+      <div className="hero-right">
+        <img
+          className="hero-cake"
+          src={heroCake}
+          alt="Bakery Bakerman"
+          fetchPriority="high"
+        />
+      </div>
+    </section>
+  );
+}

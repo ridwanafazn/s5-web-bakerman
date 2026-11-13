@@ -166,3 +166,12 @@
       margin-bottom: 8vw;
     }
   }
+@media screen and (max-width: 640px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-item img {
+    height: 180px;
+  }
+}

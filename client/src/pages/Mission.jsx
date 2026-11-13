@@ -1,151 +1,134 @@
-// this file is in the 'src/pages/Mission.jsx'
-import React, { useState, useEffect } from 'react';
-import '../styles/mission.css'
-import tspsugar from '../assets/images/article-mission/too-much-sugar.webp'
-import glutenfree from '../assets/images/article-mission/gluten-free.jpg'
-import insuline_res from '../assets/images/article-mission/insulineresistance.jpg'
-import meal_plan from '../assets/images/article-mission/meal-plan.webp'
-import { RiAdvertisementFill, RiAdvertisementLine } from 'react-icons/ri';
+import '../styles/mission.css';
 
+import tspsugar from '../assets/images/article-mission/too-much-sugar.webp';
+import glutenfree from '../assets/images/article-mission/gluten-free.jpg';
+import insuline_res from '../assets/images/article-mission/insulineresistance.jpg';
+import meal_plan from '../assets/images/article-mission/meal-plan.webp';
 
+const articles = [
+  {
+    image: insuline_res,
+    alt: 'Insulin resistance',
+    title: 'What Happens to Your Body When You Have Insulin Resistance',
+  },
+  {
+    image: meal_plan,
+    alt: 'Meal plan',
+    title: '7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance',
+  },
+  {
+    image: glutenfree,
+    alt: 'Gluten free',
+    title: 'Gluten free? Gotta be Bakerman’s Bakery.',
+  },
+];
 
+export default function Mission() {
+  return (
+    <div className="mission-container">
+      <div className="left-mission">
+        <article className="mission-article">
+          <section className="hero-section">
+            <p className="mission-eyebrow">Misi kami</p>
+            <h1>Nikmati manisnya tanpa kehilangan kontrol.</h1>
+            <p>
+              Bakerman Balance percaya bahwa moderasi lebih realistis daripada
+              larangan. Kami membuat dessert yang enak, menampilkan gula secara
+              transparan, dan membantu kamu mengatur budget manis mingguan.
+            </p>
+            <img className="assets" src={tspsugar} alt="Gula dan kesehatan" />
+            <p>
+              Gula bukan satu-satunya faktor penyebab diabetes — genetika,
+              aktivitas, dan pola makan memainkan peran besar. Yang bisa kami
+              bantu adalah membuat pilihan dessert lebih sadar, bukan menghakimi.
+            </p>
+          </section>
 
+          <section className="challenge-section">
+            <h2>Budget gula, bukan larangan.</h2>
+            <p>
+              Setiap member punya budget gula mingguan: 60 g untuk yang ingin
+              lebih disiplin, 90 g untuk keseimbangan, atau 120 g untuk yang
+              lebih longgar. Budget ini hanya menghitung gula dari produk
+              Bakerman, bukan total diet harianmu.
+            </p>
+            <p>
+              Setiap produk punya label: Ringan (≤10 g), Seimbang (11–20 g),
+              Manja (21–35 g), dan Manja banget (&gt;35 g). Semua tetap dijual —
+              kamu yang memilih.
+            </p>
+          </section>
 
-const Mission = () => {
-    const [slideIndex, setSlideIndex] = useState(1);
+          <section className="fitness-section">
+            <h2>Bonus dari aktivitas, bukan hukuman.</h2>
+            <p>
+              Hubungkan Strava, lalu menit aktifmu menambah budget gula
+              mingguan. Ini bukan ajakan “olahraga supaya boleh makan”, tapi
+              cara membuat aktivitas dan kenikmatan dessert berjalan seimbang.
+            </p>
+            <ul>
+              <li>30–59 menit aktif → +10 g</li>
+              <li>60–89 menit → +20 g</li>
+              <li>90–149 menit → +30 g</li>
+              <li>≥150 menit → +45 g (maksimum)</li>
+            </ul>
+            <p>
+              Hanya aktivitas GPS yang dihitung; manual upload dan e-bike tidak
+              masuk. Bonus dibatasi agar tidak menjadi kompensasi berlebihan.
+            </p>
+          </section>
 
-    const showSlide = (n) => {
-        const slides = document.getElementsByClassName('article-advertise');
-        if (n > slides.length) {
-            setSlideIndex(1);
-        } else if (n < 1) {
-            setSlideIndex(slides.length);
-        } else {
-            setSlideIndex(n);
-        }
-    };
+          <section className="how-it-works-section">
+            <h2>Cara kerja Bakerman Balance.</h2>
+            <ol>
+              <li>Atur budget gula mingguan sesuai ritmemu.</li>
+              <li>Pilih treat dengan label gula yang jelas.</li>
+              <li>Pickup di Bakerman Dago, Bandung.</li>
+            </ol>
+          </section>
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            showSlide(slideIndex + 1);
-        }, 3000); // Change slide every 5 seconds (adjust as needed)
+          <section className="empowering-section">
+            <h2>Lebih dari bakery.</h2>
+            <p>
+              Kami ingin dessert tetap jadi bagian dari hidup yang seimbang,
+              bukan sesuatu yang harus dihindari atau dibalas dengan rasa
+              bersalah.
+            </p>
+          </section>
 
-        return () => clearInterval(intervalId); // Cleanup on component unmount
-    }, [slideIndex]);
+          <section className="movement-section">
+            <h2>#BakermanBalance</h2>
+            <p>
+              Bagikan caramu menikmati dessert dengan sadar. Kami percaya
+              kebiasaan kecil yang konsisten lebih kuat daripada aturan yang
+              terlalu ketat.
+            </p>
+            <p className="mission-disclaimer">
+              Bakerman Balance bukan alat medis. Jika kamu memiliki kondisi
+              kesehatan tertentu, konsultasikan pilihan makananmu dengan tenaga
+              kesehatan.
+            </p>
+          </section>
+        </article>
+      </div>
 
-    useEffect(() => {
-        showSlide(slideIndex);
-    }, [slideIndex]);
-
-    return (
-        <div className='mission-container'>
-            <div className='left-mission'>
-                <article className="mission-article"> {/* Mengganti div menjadi article karena ini adalah bagian dari konten */}
-                    {/* Hero Section */}
-                    <section className="hero-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h1>Our Sweet Mission </h1>
-                        <p>
-                            At Bakerman, we&apos;re on a mission to redefine your sweet experience. Join us in embracing
-                            a healthier lifestyle while savoring the goodness of our bakery treats. <br />
-                        </p>
-                        <img className='assets' src={tspsugar} alt="Too much sugar" />
-                        <p>There are many speculations regarding the root cause of diabetes, one of them being an excessive consumption of sugar. Diabetes is a complex medical condition caused by a combination of factors. Eating too much sugar alone isn’t enough to cause diabetes; it’s much more complicated than that. For example, type 2 diabetes, which accounts for 90% to 95% of all diagnosed diabetes, per the Centers for Disease Control and Prevention, can develop due to a combination of genetic and lifestyle factors. While the American Diabetes Association notes that there is an association between increased intake of sugary beverages and type 2 diabetes, eating sugar doesn’t cause diabetes. Causation and association aren’t the same as correlation. Other factors, such as environment, genetics, medical history, age, race, physical activity and stress, also play a role.
-                            Read on to learn more about the complexities of diabetes, the different types, the best ways to eat to reduce your risk and more.</p>
-
-                    </section>
-
-                    {/* Sugar Reduction Challenge */}
-                    <section className="challenge-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h2>Sweet Choices, Smart Limits.</h2>
-                        <p>
-                            We are deeply committed to prioritizing your well-being and fostering a holistic approach to a healthier lifestyle. Each week, we extend to you the opportunity to indulge in our delectable sweet delights, carefully crafted with a conscientious touch. These tempting treats are meticulously calculated to ensure they contain no more than 40g of sugar, allowing you the freedom to savor the goodness without compromising your health. Embark on a delightful journey with us, where every choice is made mindfully, enriching your experience with the perfect blend of flavor and well-being.
-                        </p>
-                    </section>
-
-                    {/* Fitness Integration */}
-                    <section className="fitness-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h2>Earn Sweet Treats with Every Stride.</h2>
-                        <p>
-                            At the heart of our philosophy lies a steadfast belief in the harmonious balance between a fulfilling lifestyle and your well-being. Embrace a holistic approach to health by seamlessly integrating your Strava account into our community. This innovative connection not only adds a dynamic dimension to your fitness journey but also opens the door to a realm of delectable rewards.
-                        </p>
-                        <p>
-                            When you choose to synchronize your Strava activities with us, every stride, every endeavor, transforms into an opportunity to pamper yourself guilt-free. It's not just about exercise; it's about celebrating each milestone, each achievement, with the sweetness that complements your active lifestyle. For every validated Strava activity, we happily offer you an additional chance to indulge in our treats, creating a perfect synergy between your fitness accomplishments and the joy of savoring our delightful creations. Join us in this unique experience where your dedication to a healthy, active life is not just acknowledged but celebrated with every tantalizing bite.
-                        </p>
-                    </section>
-
-                    {/* How It Works */}
-                    <section className="how-it-works-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h2>Navigating Your Bakerman Mission.</h2>
-                        <p>
-                            <ol>
-                                <li><p>Purchase Chances: Explore our bakery wonders, but with a limit. You have three chances to buy treats each week.</p></li>
-                                <li><p>Sugar Cap: Each chance is designed to provide you with a sweet experience without exceeding 40g of sugar.</p></li>
-                                <li><p>Strava Exchange: Integrate your Strava account. Engage in sports activities, and for each valid session, earn an extra chance to treat yourself.</p></li>
-                            </ol>
-                        </p>
-
-                    </section>
-
-                    {/* Empowering Choices */}
-                    <section className="empowering-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h2>More Than a Bakery.</h2>
-                        <p>
-                            Bakerman is not just about pastries; it&apos;s a lifestyle. We encourage you to savor the sweetness
-                            in moderation, embrace physical activity, and make choices that empower your well-being.
-                        </p>
-                    </section>
-
-                    {/* Join the Movement */}
-                    <section className="movement-section"> {/* Mengganti div menjadi section karena ini adalah bagian dari konten */}
-                        <h2>Become a Bakerman Advocate.</h2>
-                        <p>
-                            Spread the sweetness responsibly. Share your Bakerman journey on social media using #BakermanBalance
-                            and inspire others to make mindful choices. Let&apos;s create a community that celebrates the joy of living well.
-                        </p>
-                    </section>
-                </article>
-
+      <aside className="right-mission">
+        <h2>Bacaan lain</h2>
+        <div className="aside-info">
+          {articles.map((article) => (
+            <div className="article-advertise" key={article.title}>
+              <img
+                className="assets"
+                src={article.image}
+                alt={article.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="aside-desc">{article.title}</p>
             </div>
-            <div className='right-mission'>
-                <aside>
-                    <h1>Other Eating Well Article</h1>
-                    <div className='aside-info'>
-                        <div className='article-advertise'>
-                            <img className='assets' src={insuline_res} alt='slide1' />
-                            <p className='aside-desc'>What Happens to Your Body When You Have Insulin Resistance</p>
-                        </div>
-                        <div className='article-advertise'>
-                            <img className='assets' src={meal_plan} alt='slide2' />
-                            <p className='aside-desc'>7-Day No-Sugar High-Fiber Meal Plan for Insulin Resistance</p>
-                        </div>
-                        <div className='article-advertise'>
-                            <img className='assets' src={glutenfree} alt='slide3' />
-                            <p className='aside-desc'>Gluten free? Gotta be Bakerman&apos;s Bakery.</p>
-                        </div>
-                    </div>
-                    {/* <button className='prev' onClick={() => showSlide(slideIndex - 1)}>
-                        &#10094;
-                    </button>
-                    <button className='next' onClick={() => showSlide(slideIndex + 1)}>
-                        &#10095;
-                    </button> */}
-                </aside>
-
-                <div className='advertisement'>
-                    <h1 className='add-title'>Advertisement</h1>
-                <RiAdvertisementFill className='add'>
-                </RiAdvertisementFill>
-
-                <RiAdvertisementLine className='add'>
-                </RiAdvertisementLine>
-                </div>
-                
-            </div>
-
+          ))}
         </div>
-
-
-    );
-};
-
-export default Mission;
+      </aside>
+    </div>
+  );
+}

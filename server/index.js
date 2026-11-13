@@ -1,33 +1,72 @@
-// Pada file index.js atau server Anda
-const express = require('express');
-const app = express();
-const port = 5050; // Ganti sesuai kebutuhan
+const mongoose = require('mongoose');
 
-app.get('/products', async (req, res) => {
-    try {
-      const products = await db.collection('products').find().toArray();
-      console.log(products); // Tambahkan baris ini
-      res.json(products);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
+const env = require('./config/env');
+const createApp = require('./app');
+const { initFirebase } = require('./config/firebase');
+const { cleanupExpiredScreenshots } = require('./services/manualActivityService');
+
+const app = createApp();
+
+try {
+  initFirebase();
+} catch (error) {
+  console.error('Firebase init error:', error.message);
+}
+
+mongoose
+  .connect(env.mongoUri, { serverSelectionTimeoutMS: 8000 })
+  .then(() => {
+    console.log('MongoDB connected');
+  })
+  .catch((error) => {
+    console.error('MongoDB connection error:', error.message);
+    console.error('Pastikan MONGODB_URI di server/.env benar dan database sedang berjalan.');
   });
-  
-  app.get('/products', async (req, res) => {
-    try {
-      const products = await db.collection('products').find().toArray();
-      console.log(products); // Tambahkan log ini
-      res.json(products);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: error.message }); // Ubah pesan error menjadi lebih spesifik
-    }
-  });
-  
 
-
-// Server mendengarkan pada port yang telah ditentukan
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+mongoose.connection.on('disconnected', () => {
+  console.warn('MongoDB disconnected');
 });
+
+const server = app.listen(env.port, () => {
+  console.log(`Server is running on port ${env.port} (${env.nodeEnv})`);
+  console.log(`API docs: http://localhost:${env.port}/api-docs`);
+});
+
+// Bersihkan screenshot aktivitas manual yang sudah lewat 7 hari.
+// Di Vercel, gunakan cron /api/v1/internal/cleanup-cloudinary.
+if (
+  !process.env.VERCEL &&
+  (env.cloudinary.cloudName || env.cloudinary.mock) &&
+  process.env.DISABLE_CLOUDINARY_CLEANUP_JOB !== 'true'
+) {
+  const runCleanup = () => {
+    cleanupExpiredScreenshots()
+      .then((result) => {
+        if (result.scanned > 0) {
+          console.log('[CLOUDINARY CLEANUP]', JSON.stringify(result));
+        }
+      })
+      .catch((error) => {
+        console.error('[CLOUDINARY CLEANUP]', error.message);
+      });
+  };
+
+  setTimeout(runCleanup, 10_000).unref();
+  setInterval(runCleanup, 24 * 60 * 60 * 1000).unref();
+}
+
+async function shutdown(signal) {
+  console.log(`${signal} received, shutting down...`);
+  server.close(async () => {
+    try {
+      await mongoose.disconnect();
+    } finally {
+      process.exit(0);
+    }
+  });
+
+  setTimeout(() => process.exit(1), 10_000).unref();
+}
+
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));

@@ -1,157 +1,137 @@
-.mission-container{
-    display:flex;
-    width:fit-content;
-    justify-content: space-between;
-    height: auto;
+.mission-container {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 6vw 5rem;
+  box-sizing: border-box;
 }
 
 .left-mission {
-    width: 70%;  
-    background-color:ghostwhite;  
-    margin: 1vw;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
 }
 
-.assets {
-    margin: 1vw;
+.mission-article {
+  display: block;
+  margin: 0;
 }
 
-
-.mission-article{
-    display:block;
-    margin: 1vw 5vw;
-    align-content: center;
+.mission-eyebrow {
+  font-family: 'Ambit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #8a6a4f;
+  margin: 0 0 0.5rem;
 }
 
 .left-mission h1 {
-    font-family: 'Marhey', sans-serif;   
-    display: flex;
-    justify-content: center;
-    font-size:xx-large;
-    position: static;
+  font-family: 'Marhey', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: #272727;
+  margin: 0 0 1rem;
 }
 
-.right-mission h1 {
-    padding: 1vw 1vw;
-    font-family: 'Marhey', sans-serif;   
-    display: flex;
-    justify-content: center;
-    font-size:large;
-    object-fit: cover;
-    position: static;
-    background-color: aquamarine;
+.left-mission h2 {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.4rem;
+  color: #272727;
+  margin: 2rem 0 0.5rem;
 }
 
-.left-mission h2,h3 {
-    font-family: 'Marhey', sans-serif;   
+.mission-article p {
+  font-family: 'Ambit', sans-serif;
+  color: #4a4a4a;
+  line-height: 1.65;
+  margin: 0.5rem 0;
 }
 
-p {
-    margin-top: 1vw;
-    font-family: 'Ambit', sans-serif;
-    justify-content: center;
+.mission-article ul,
+.mission-article ol {
+  font-family: 'Ambit', sans-serif;
+  color: #4a4a4a;
+  line-height: 1.7;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
 }
 
-
+.mission-article li {
+  margin-bottom: 0.35rem;
+}
 
 .assets {
-    display: flex;
-    justify-content: center;
-    object-fit: cover;
-    max-width: 95%;
-    height: auto;
-    padding-top: 2vw;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 1rem 0;
+  display: block;
+}
+
+.mission-disclaimer {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+  border-top: 1px solid #efe7e1;
+  padding-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .right-mission {
-    width: 30%;
-    background-color: ghostwhite;
-    margin: 1vw 1vw;
-    overflow: hidden; /* Menyembunyikan bagian yang melebihi container */
-    text-align: center;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(39, 39, 39, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.right-mission h2 {
+  font-family: 'Marhey', sans-serif;
+  font-size: 1.2rem;
+  color: #272727;
+  margin: 0 0 1rem;
 }
 
 .aside-info {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.article-advertise {
-    flex: 0 0 33.33%; /* Setiap item slide mengambil 33.33% lebar container */
-    box-sizing: border-box;
-    padding: 0 10px; /* Padding untuk menghindari teks berdekatan dengan tepi */
+.article-advertise img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
 .aside-desc {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-
-.prev,
-.next {
-    position: absolute;
-    font-size: 24px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.advertisement {
-  display: flex;
-  flex-direction: column;
-}
-
-.add {
-  padding-top: 1vw;
-  padding-bottom: 10vw;
-  display: flex;
-}
-
-.add-title{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: aquamarine;
-  text-wrap:wrap;
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.8rem;
+  color: #5f5f5f;
+  line-height: 1.4;
+  text-align: left;
+  margin: 0.5rem 0 0;
 }
 
 @media screen and (max-width: 1024px) {
-    .aside-info {
-      flex-direction: column;
-    }
-  
-    .prev,
-    .next {
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      height: 50px;
-    }
-  
-    .prev {
-      left: 0;
-      border-radius: 3px 3px 0 0;
-    }
-  
-    .next {
-      right: 0;
-      border-radius: 0 0 3px 3px;
-    }
+  .mission-container {
+    grid-template-columns: 1fr;
+    padding: 2rem 6vw 4rem;
   }
+
+  .right-mission {
+    position: static;
+  }
+
+  .left-mission {
+    padding: 1.5rem;
+  }
+}

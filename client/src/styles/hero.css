@@ -1,124 +1,136 @@
 .hero-container {
-  background: #F9F4F6;
+  background: #f9f4f6;
   display: flex;
-  padding: 0 8vw;
-  height: 87vh;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 8vw 4.5rem;
+  box-sizing: border-box;
+  min-height: 78vh;
 }
 
 .hero-left {
-  width: 50%;
+  width: 52%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 4vw;
-  object-fit: cover;
+}
+
+.hero-eyebrow {
+  font-family: 'Ambit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #8a6a4f;
+  margin: 0 0 0.75rem;
+}
+
+.hero-title {
+  font-family: 'Marhey', sans-serif;
+  color: #272727;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin: 0 0 1.25rem;
+  max-width: 12ch;
+}
+
+.hero-description {
+  font-family: 'Ambit', sans-serif;
+  color: #4a4a4a;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+  max-width: 36rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Marhey', sans-serif;
+  font-size: 0.95rem;
+  background: #272727;
+  color: #f9f4f6;
+  border: 2px solid #272727;
+  border-radius: 999px;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: #4a1d1f;
+  border-color: #4a1d1f;
+  transform: translateY(-2px);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  color: #272727;
+}
+
+.hero-cta-secondary:hover {
+  background: #272727;
+  color: #f9f4f6;
+  border-color: #272727;
+}
+
+.hero-pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-pills li {
+  font-family: 'Ambit', sans-serif;
+  font-size: 0.78rem;
+  color: #143d2d;
+  background: #bae8d4;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
 }
 
 .hero-right {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
+  width: 48%;
 }
 
 .hero-cake {
   width: 100%;
-  border-radius: 2px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(39, 39, 39, 0.16);
   object-fit: cover;
+  display: block;
 }
-
-.hero-title {
-  font-family: 'Marhey', sans-serif;          
-  color: #272727;
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 2vw;
-  display: flex;
-  object-fit: cover;
-}
-
-.hero-description {
-  font-family: 'Ambit', sans-serif;      
-  color: #272727;
-  margin-bottom: 3vw;
-  display: flex;
-  object-fit: cover;
-}
-
-.hero-button-container {
-  height:60px;
-  width: 200px;
-  border-radius: 5px;
-  background-color: #272727;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  display: flex;
-  box-shadow: 0px 0px 15px rgba(59, 24, 25, 0.6);
-}
-
-.hero-button-text {
-  font-family: 'Marhey', sans-serif;      
-  color: #FFFFFF;
-  cursor: pointer;
-  margin: 0 0;
-}
-
 
 @media screen and (max-width: 1024px) {
-  .hero-container{
+  .hero-container {
     flex-direction: column;
-    padding: 2vw 11vw;
-    padding-top: 5vw;
-    height: auto;
-    justify-content: flex-end;
-    
+    min-height: auto;
+    padding: 2.5rem 6vw 3.5rem;
+    gap: 2rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
   }
 
   .hero-title {
-    font-size: 8.3vw;
-    margin-bottom: 5vw;
-    width: 100%;
-    
+    max-width: 100%;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
   }
 
   .hero-description {
-    font-size: 3.5vw;
-    margin-bottom: 8vw;
-    margin-right: 3vw;
-  }
-
-  .hero-button-container {
-    height: 14vw;
-    width: 46vw;
-  }
-
-  .hero-cake {
-    height: 50%;
-    display: flex;
-    justify-content: space-around;
-    width: 120%;
-    object-fit: cover;
-  }
-
-  .hero-left {
-    width: 100%;
-    padding: 0;
-    object-fit: cover;
-  }
-
-  .hero-right {
-    display: flex;
-    justify-content: center;
-    padding-top: 15vw;
-    width: 100%;
-    margin-bottom: 16vw;
-    object-fit: cover;
-  }
-
-  .hero-button-text {
-    font-size: 4vw;
-
+    font-size: 0.98rem;
   }
 }
