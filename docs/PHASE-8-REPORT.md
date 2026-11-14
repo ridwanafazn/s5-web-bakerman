@@ -2,7 +2,7 @@
 
 **Tanggal:** 14 November 2026
 **Status:** ✅ Frontend live di Cloudflare Pages + domain custom; API via Cloudflare Tunnel
-**Commit:** `126077e` (`feat: complete Bakerman Balance app (phases 1-7)`) — sudah di-push ke `origin/main`
+**Commit:** `126077e` (aplikasi) + `af04876` & `11bccef` (docs deployment) — sudah di-push ke `origin/main`
 
 ---
 
@@ -45,7 +45,7 @@ Deployment:
 - Production: **https://bakerman-balance.pages.dev**
 - Custom domain: **https://bakerman.ridwanafazn.my.id**
 - CNAME: `bakerman` → `bakerman-balance.pages.dev` (proxied)
-- Deployment terakhir: `aae3863c-9c49-432b-ae89-9d3436c5a977`
+- Deployment terakhir: `aae3863c-9c49-432b-ae89-9d3436c5a977` (build dari `af04876`; kode frontend sama dengan `126077e`)
 - Build & deploy: **success**
 
 Verifikasi:
@@ -97,7 +97,7 @@ branch main → origin/main
 GitHub mengembalikan peringatan Dependabot:
 
 ```text
-155 vulnerabilities (4 critical, 67 high, 70 moderate, 14 low)
+6 vulnerabilities (2 high, 3 moderate, 1 low)
 ```
 
 Catatan:

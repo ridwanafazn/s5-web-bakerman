@@ -118,7 +118,7 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 - Cloudinary asli belum diisi; aktivitas manual di production masih disabled.
 - Google sign-in mungkin butuh domain ditambahkan ke Firebase Authorized Domains.
 - Strava asli opsional dan butuh langganan Strava.
-- Dependabot masih melaporkan 155 vulnerabilities; server audit 0, client 4 high transitive Firestore (tidak dipakai runtime).
+- Dependabot masih melaporkan **6 vulnerabilities**; server audit 0, client 4 high transitive Firestore (tidak dipakai runtime).
 
 ---
 
