@@ -2,7 +2,7 @@
 
 **Tanggal:** 14 November 2026
 **Status:** ✅ FE live di Cloudflare Pages; BE live di Vercel; MongoDB Atlas; Cloudinary asli
-**Commit terbaru:** `1d591e5` (kode) + docs final — sudah di-push ke `origin/main`
+**Commit terbaru:** `085b257` — sudah di-push ke `origin/main`
 
 ---
 
@@ -35,7 +35,7 @@ Perbaikan:
 - Custom domain: **https://bakerman.ridwanafazn.my.id**
 - CNAME: `bakerman` → `bakerman-balance.pages.dev` (proxied)
 - Status domain: **active**
-- Deployment terakhir: `c0128f25-b2ac-4f00-9e9b-83bd269f6f73` — success
+- Deployment terakhir: `b8f1afe3-83b1-4516-adec-0f655fbc29b3` — success (commit `085b257`)
 
 ---
 
@@ -115,6 +115,9 @@ Custom domain       : 200
 ## 6. Commit & Push
 
 ```text
+085b257 fix: retry transient API cold-start failures
+57e8475 docs: clarify health vs readiness semantics
+8f4d59f docs: update production links for Cloudflare Pages and Vercel API
 1d591e5 feat: deploy API to Vercel with Atlas, Cloudinary and DB readiness
 1656d01 docs: include latest commit hash
 34f4349 feat: wire production env, Cloudinary and stable tunnel checks
