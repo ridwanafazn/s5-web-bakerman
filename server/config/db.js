@@ -11,7 +11,7 @@ async function connectDb() {
 
   if (!connectionPromise) {
     connectionPromise = mongoose
-      .connect(env.mongoUri, { serverSelectionTimeoutMS: 8000 })
+      .connect(env.mongoUri, { serverSelectionTimeoutMS: 12000 })
       .catch((error) => {
         connectionPromise = null;
         throw error;

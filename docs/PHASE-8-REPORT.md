@@ -50,6 +50,7 @@ Perbaikan:
 - Cloudinary: **asli** (`CLOUDINARY_MOCK=false`), upload + delete teruji
 - Firebase Admin: service account JSON, verifikasi token teruji
 - DB readiness: request API menunggu koneksi Mongo sebelum diproses
+- Cold-start resilience: client retry otomatis sekali untuk GET saat 503/network error; timeout Axios 20 dtk dan Mongo selection 12 dtk
 - Dependency fix: `jwks-rsa@3.2.0` + `jose@4.15.4` override agar Vercel tidak kena `ERR_REQUIRE_ESM`
 - Cron cleanup Cloudinary: `server/vercel.json`
 - **Tidak ada tunnel untuk production.** Quick Tunnel hanya dipakai untuk dev preview lokal.
