@@ -17,7 +17,7 @@ Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, serta 
 
 ### 1. Production-like Docker stack
 
-**https://merchants-publishing-release-retained.trycloudflare.com**
+**https://manuals-strip-vacancies-practical.trycloudflare.com**
 
 - Diarahkan ke nginx container `http://localhost:8080`.
 - API + Mongo di network Docker privat.
@@ -28,7 +28,7 @@ Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, serta 
 
 ### 2. Dev preview (fitur + Strava simulasi)
 
-**https://speed-podcasts-movements-moms.trycloudflare.com**
+**https://bean-martial-old-thy.trycloudflare.com**
 
 - Diarahkan ke `vite preview` di `http://127.0.0.1:4173`.
 - Strava demo aktif.
@@ -146,10 +146,10 @@ cd client
 E2E_BASE_URL=http://localhost:8080 npm run e2e
 
 # Production tunnel
-E2E_BASE_URL=https://merchants-publishing-release-retained.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://manuals-strip-vacancies-practical.trycloudflare.com npm run e2e
 
 # Dev preview
-E2E_BASE_URL=https://speed-podcasts-movements-moms.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://bean-martial-old-thy.trycloudflare.com npm run e2e
 ```
 
 > Pagination hanya terlihat jika order > 8. Saat ini member punya 4 order.

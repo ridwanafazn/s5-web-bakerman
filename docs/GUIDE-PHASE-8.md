@@ -10,8 +10,8 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
 |---|---|
 | **Frontend production** | **https://bakerman.ridwanafazn.my.id** |
 | Frontend Pages | https://bakerman-balance.pages.dev |
-| API (Cloudflare Tunnel) | https://merchants-publishing-release-retained.trycloudflare.com/api |
-| Dev preview | https://speed-podcasts-movements-moms.trycloudflare.com |
+| API (Cloudflare Tunnel) | https://manuals-strip-vacancies-practical.trycloudflare.com/api |
+| Dev preview | https://bean-martial-old-thy.trycloudflare.com |
 | Production lokal | http://localhost:8080 |
 | Dev lokal | http://localhost:5173 |
 
@@ -58,7 +58,7 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
    - Slot pickup muncul.
 
 Jika login/API gagal:
-- Cek API tunnel hidup: `https://merchants-publishing-release-retained.trycloudflare.com/api/v1/products`
+- Cek API tunnel hidup: `https://manuals-strip-vacancies-practical.trycloudflare.com/api/v1/products`
 - Cek CORS API sudah memasukkan domain Pages/custom.
 - Cek laptop & Docker stack menyala.
 
@@ -86,7 +86,7 @@ Status domain di Cloudflare Pages: **active**.
 Cloudflare Pages env saat ini:
 
 ```env
-VITE_API_URL=https://merchants-publishing-release-retained.trycloudflare.com/api
+VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api
 ```
 
 Jika API pindah domain:

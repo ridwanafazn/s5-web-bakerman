@@ -38,14 +38,14 @@ Project:
 - Root directory: `client`
 - Build command: `npm run build`
 - Output: `dist`
-- Env: `VITE_API_URL=https://merchants-publishing-release-retained.trycloudflare.com/api`
+- Env: `VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api`
 
 Deployment:
 
 - Production: **https://bakerman-balance.pages.dev**
 - Custom domain: **https://bakerman.ridwanafazn.my.id**
 - CNAME: `bakerman` → `bakerman-balance.pages.dev` (proxied)
-- Deployment terakhir: `861b87c4-48d7-43e7-be45-be4720115131`
+- Deployment terakhir: `aae3863c-9c49-432b-ae89-9d3436c5a977`
 - Build & deploy: **success**
 
 Verifikasi:
@@ -74,12 +74,12 @@ Karena itu, API saat ini:
 
 - Berjalan di Docker production stack lokal (`localhost:8080` nginx → `api:5050`).
 - Diekspos lewat **Cloudflare Quick Tunnel**:
-  **https://merchants-publishing-release-retained.trycloudflare.com**
+  **https://manuals-strip-vacancies-practical.trycloudflare.com**
 - Pages frontend memanggil `.../api`.
 - CORS API mengizinkan:
   - `https://bakerman.ridwanafazn.my.id`
   - `https://bakerman-balance.pages.dev`
-  - `https://861b87c4.bakerman-balance.pages.dev`
+  - `https://aae3863c.bakerman-balance.pages.dev`
   - `http://localhost:8080`
 
 **Keterbatasan:** API masih bergantung pada laptop/Docker yang menyala. Ini bukan API yang dihosting penuh di Cloudflare. Untuk API cloud sejati, perlu Vercel/Render/VPS atau Cloudflare Workers Paid + Containers.
@@ -140,8 +140,8 @@ Custom domain: 200 + login berhasil
 |---|---|
 | Frontend production | **https://bakerman.ridwanafazn.my.id** |
 | Frontend Pages | https://bakerman-balance.pages.dev |
-| API (tunnel) | https://merchants-publishing-release-retained.trycloudflare.com/api |
-| Dev preview | https://speed-podcasts-movements-moms.trycloudflare.com |
+| API (tunnel) | https://manuals-strip-vacancies-practical.trycloudflare.com/api |
+| Dev preview | https://bean-martial-old-thy.trycloudflare.com |
 | Production lokal | http://localhost:8080 |
 | Dev lokal | http://localhost:5173 |
 

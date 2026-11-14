@@ -156,7 +156,7 @@ consoleErrors: 0
 Diuji juga lewat tunnel publik:
 
 ```text
-E2E_BASE_URL=https://speed-podcasts-movements-moms.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://bean-martial-old-thy.trycloudflare.com npm run e2e
 → ok: true, steps: 8, consoleErrors: 0
 ```
 

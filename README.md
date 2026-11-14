@@ -153,7 +153,7 @@ docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm ru
 ```
 
 - Client nginx: <http://localhost:8080>
-- Public tunnel (sementara): **https://merchants-publishing-release-retained.trycloudflare.com**
+- Public tunnel (sementara): **https://manuals-strip-vacancies-practical.trycloudflare.com**
 - API internal: `api:5050`
 - Mongo internal: `mongo:27017`
 - `/ready` → `{"status":"ready","database":"connected"}`
@@ -166,7 +166,7 @@ docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm ru
 - Production: **https://bakerman.ridwanafazn.my.id**
 - Pages default: <https://bakerman-balance.pages.dev>
 - Project: `bakerman-balance` (GitHub source, root `client`, build `npm run build`, output `dist`).
-- Env Pages: `VITE_API_URL=https://merchants-publishing-release-retained.trycloudflare.com/api`
+- Env Pages: `VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api`
 - API masih Express/MongoDB di Docker lokal yang diekspos lewat Cloudflare Tunnel; belum hosted penuh di Cloudflare compute.
 
 Panduan lengkap: `docs/GUIDE-PHASE-8.md`, `docs/GUIDE-PHASE-6.md`, dan `docs/DEPLOYMENT.md`.

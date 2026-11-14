@@ -164,7 +164,7 @@ Sesuai ekspektasi: Strava asli belum disiapkan, mode simulasi dimatikan di produ
 E2E_BASE_URL=http://localhost:8080 npm run e2e
 → 8 langkah, 0 console error
 
-E2E_BASE_URL=https://merchants-publishing-release-retained.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://manuals-strip-vacancies-practical.trycloudflare.com npm run e2e
 → PASS filter riwayat pesanan — 2 order, kartu=true
 → 8 langkah, 0 console error
 ```
@@ -222,11 +222,11 @@ Hasil E2E setelah perbaikan: filter Selesai menampilkan **2 order** di preview m
 
 ### Tunnel production (sementara)
 
-**https://merchants-publishing-release-retained.trycloudflare.com**
+**https://manuals-strip-vacancies-practical.trycloudflare.com**
 
 ### Tunnel dev preview (fitur + Strava demo)
 
-**https://speed-podcasts-movements-moms.trycloudflare.com**
+**https://bean-martial-old-thy.trycloudflare.com**
 
 > Keduanya Cloudflare Quick Tunnel, sementara, dan laptop harus tetap menyala.
 
