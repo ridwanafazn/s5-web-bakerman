@@ -277,8 +277,8 @@ Catatan:
 - [x] `npm test` 34/34 pass.
 - [x] `npm run lint` 0 error.
 - [x] `npm run build` sukses.
-- [x] API `/health` → `database: connected`.
-- [x] API `/ready` → `{"status":"ready","database":"connected"}`.
+- [x] API `/health` → `status: ok` (liveness).
+- [x] API `/ready` → `{"status":"ready","database":"connected"}` (otoritatif).
 - [x] `/api-docs/` → 404 di production.
 - [x] Client domain masuk Firebase Authorized Domains (email/password).
 - [x] `CORS_ORIGIN` hanya domain client.

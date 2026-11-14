@@ -100,8 +100,8 @@ Perbaikan yang dilakukan:
 Server tests        : 34/34 pass
 Client lint         : 0 error
 Client build        : sukses
-Vercel /health      : database connected
-Vercel /ready       : {"status":"ready","database":"connected"}
+Vercel /health      : status ok (liveness; field database bisa `disconnected` saat cold start)
+Vercel /ready       : {"status":"ready","database":"connected"} (otoritatif)
 Vercel /products    : 10 produk
 E2E custom domain   : 9 langkah, 0 console error
 Aktivitas manual    : 90 g → 100 g → 90 g (Cloudinary asli)
