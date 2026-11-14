@@ -13,6 +13,7 @@ const ADMIN_PASSWORD = process.env.E2E_ADMIN_PASSWORD || 'bakermanAdmin';
 const ACTIVITY_IMAGE =
   process.env.E2E_ACTIVITY_IMAGE ||
   resolve('src/assets/images/classic-banana-pudding.webp');
+const HOST_RESOLVER = process.env.E2E_HOST_RESOLVER || '';
 
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
@@ -45,11 +46,16 @@ function assertNoErrors(errors) {
   );
 }
 
+const browserArgs = ['--no-sandbox', '--disable-setuid-sandbox'];
+if (HOST_RESOLVER) {
+  browserArgs.push(`--host-resolver-rules=${HOST_RESOLVER}`);
+}
+
 const browser = await puppeteer.launch({
   executablePath: findChrome(),
   headless: true,
   defaultViewport: { width: 390, height: 844, isMobile: true, hasTouch: true },
-  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  args: browserArgs,
 });
 
 const errors = [];
@@ -163,6 +169,9 @@ try {
 
   await step('aktivitas manual + screenshot', async () => {
     await memberPage.waitForSelector('.manual-activity-section');
+    await memberPage.waitForSelector('.manual-activity-form', {
+      timeout: 45_000,
+    });
     const configured = await memberPage.evaluate(() => {
       const button = document.querySelector('.manual-submit');
       return Boolean(button && !button.disabled);

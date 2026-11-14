@@ -83,7 +83,7 @@ Konfigurasi:
 - Root: `client`
 - Build command: `npm run build`
 - Output: `dist`
-- Env: `VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api`
+- Env: `VITE_API_URL=https://assistant-source-adjustments-exotic.trycloudflare.com/api`
 
 Custom domain:
 

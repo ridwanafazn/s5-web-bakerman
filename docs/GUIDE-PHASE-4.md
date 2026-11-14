@@ -10,7 +10,7 @@ Fase 4 menambahkan **order pickup nyata**: checkout, slot, kode order, staff das
 
 Tunnel publik aktif:
 
-**https://bean-martial-old-thy.trycloudflare.com**
+**https://opponents-bras-prayers-gas.trycloudflare.com**
 
 Ini adalah **production preview** (`vite preview`), bukan dev server — lebih cepat dan stabil di browser HP karena hanya memuat satu bundle JS/CSS, tanpa HMR.
 

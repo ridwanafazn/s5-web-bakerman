@@ -17,18 +17,19 @@ Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, serta 
 
 ### 1. Production-like Docker stack
 
-**https://manuals-strip-vacancies-practical.trycloudflare.com**
+**https://assistant-source-adjustments-exotic.trycloudflare.com**
 
 - Diarahkan ke nginx container `http://localhost:8080`.
-- API + Mongo di network Docker privat.
+- API + Mongo di network Docker privat (Mongo masih lokal; Atlas auth gagal).
 - Data demo sama: member **66 g**, **4 order**.
 - Strava demo **mati** (production behavior); Swagger **404**.
-- Aktivitas manual **disabled** sampai kredensial Cloudinary diisi.
-- Cocok untuk mengecek hasil Fase 6–7 (nginx, security headers, readiness, logging).
+- **Cloudinary asli aktif**; aktivitas manual production berfungsi.
+- E2E domain custom: 9 langkah, 0 console error; upload manual 66 g → 76 g → 66 g.
+- Cocok untuk mengecek hasil Fase 6–8 (nginx, security headers, readiness, logging).
 
 ### 2. Dev preview (fitur + Strava simulasi)
 
-**https://bean-martial-old-thy.trycloudflare.com**
+**https://opponents-bras-prayers-gas.trycloudflare.com**
 
 - Diarahkan ke `vite preview` di `http://127.0.0.1:4173`.
 - Strava demo aktif.
@@ -146,10 +147,10 @@ cd client
 E2E_BASE_URL=http://localhost:8080 npm run e2e
 
 # Production tunnel
-E2E_BASE_URL=https://manuals-strip-vacancies-practical.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://assistant-source-adjustments-exotic.trycloudflare.com npm run e2e
 
 # Dev preview
-E2E_BASE_URL=https://bean-martial-old-thy.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://opponents-bras-prayers-gas.trycloudflare.com npm run e2e
 ```
 
 > Pagination hanya terlihat jika order > 8. Saat ini member punya 4 order.

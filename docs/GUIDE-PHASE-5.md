@@ -8,7 +8,7 @@ Fase 5 menambahkan **rekap mingguan**, **filter + pagination pesanan**, polish a
 
 Tunnel publik aktif:
 
-**https://bean-martial-old-thy.trycloudflare.com**
+**https://opponents-bras-prayers-gas.trycloudflare.com**
 
 - Diarahkan ke **production preview** (`vite preview`, port 4173).
 - Laptop harus tetap menyala dan online.
@@ -139,7 +139,7 @@ Uji lewat tunnel:
 
 ```bash
 # PowerShell
-$env:E2E_BASE_URL="https://bean-martial-old-thy.trycloudflare.com"
+$env:E2E_BASE_URL="https://opponents-bras-prayers-gas.trycloudflare.com"
 npm run e2e
 ```
 

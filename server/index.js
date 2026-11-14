@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
 
 const env = require('./config/env');
 const createApp = require('./app');
 const { initFirebase } = require('./config/firebase');
 const { cleanupExpiredScreenshots } = require('./services/manualActivityService');
+
+// Beberapa jaringan lokal menolak query SRV MongoDB Atlas.
+// DNS_SERVERS=8.8.8.8,1.1.1.1 membuat resolusi SRV lebih stabil.
+if (env.dnsServers.length > 0) {
+  dns.setServers(env.dnsServers);
+}
 
 const app = createApp();
 

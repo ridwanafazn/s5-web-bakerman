@@ -10,7 +10,7 @@ Fase 7 menambahkan **alternatif Strava**: aktivitas manual dengan **screenshot b
 
 ### Dev preview (mock Cloudinary — tanpa kredensial)
 
-**https://bean-martial-old-thy.trycloudflare.com**
+**https://opponents-bras-prayers-gas.trycloudflare.com**
 
 - Login member → `/balance`.
 - Form **“Catat aktivitas manual”** aktif.
@@ -20,7 +20,7 @@ Fase 7 menambahkan **alternatif Strava**: aktivitas manual dengan **screenshot b
 
 ### Production-like Docker stack
 
-**https://manuals-strip-vacancies-practical.trycloudflare.com**
+**https://assistant-source-adjustments-exotic.trycloudflare.com**
 
 - Cloudinary belum dikonfigurasi → form manual **disabled** dengan pesan setup.
 - Setelah Anda mengisi kredensial Cloudinary, form akan aktif.
@@ -188,7 +188,7 @@ E2E_BASE_URL=http://localhost:4173 npm run e2e
 E2E_BASE_URL=http://localhost:8080 npm run e2e
 
 # Lewat tunnel
-E2E_BASE_URL=https://bean-martial-old-thy.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://opponents-bras-prayers-gas.trycloudflare.com npm run e2e
 ```
 
 Output yang diharapkan:

@@ -141,7 +141,7 @@ Tunnel publik   → root 200, /api/v1/products 200
 
 ## 3. Akses dari HP
 
-- Link publik (production preview): **https://bean-martial-old-thy.trycloudflare.com**
+- Link publik (production preview): **https://opponents-bras-prayers-gas.trycloudflare.com**
 - Panduan lengkap + troubleshooting: `docs/DEV-ACCESS.md`.
 - Blank page sebelumnya terjadi karena dev server Vite (banyak modul + HMR) di mobile; diperbaiki dengan menyajikan **production build** via `vite preview` dan tunnel baru.
 - Login via email/password berhasil diuji di domain tunnel.

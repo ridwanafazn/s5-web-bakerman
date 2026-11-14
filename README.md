@@ -4,7 +4,7 @@ Full-stack bakery pre-order app: React storefront + Express/MongoDB API.
 Arah produk: **Bakerman Balance** — budget gula mingguan, transparansi gula, reward aktivitas Strava, pickup-only Bandung.
 
 > **Status:** Fase 8 (UI fix + Cloudflare Pages + commit/push) selesai.
-> Frontend live di **https://bakerman.ridwanafazn.my.id** (Cloudflare Pages). API masih via Cloudflare Tunnel ke Docker lokal.
+> Frontend live di **https://bakerman.ridwanafazn.my.id** (Cloudflare Pages). API via Cloudflare Tunnel ke Docker lokal; Cloudinary asli aktif; Atlas auth masih perlu diperbaiki.
 
 > **Live:** <https://bakerman.ridwanafazn.my.id> · **Pages:** <https://bakerman-balance.pages.dev>
 
@@ -153,7 +153,7 @@ docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm ru
 ```
 
 - Client nginx: <http://localhost:8080>
-- Public tunnel (sementara): **https://manuals-strip-vacancies-practical.trycloudflare.com**
+- Public tunnel (sementara): **https://assistant-source-adjustments-exotic.trycloudflare.com**
 - API internal: `api:5050`
 - Mongo internal: `mongo:27017`
 - `/ready` → `{"status":"ready","database":"connected"}`
@@ -166,7 +166,7 @@ docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm ru
 - Production: **https://bakerman.ridwanafazn.my.id**
 - Pages default: <https://bakerman-balance.pages.dev>
 - Project: `bakerman-balance` (GitHub source, root `client`, build `npm run build`, output `dist`).
-- Env Pages: `VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api`
+- Env Pages: `VITE_API_URL=https://assistant-source-adjustments-exotic.trycloudflare.com/api`
 - API masih Express/MongoDB di Docker lokal yang diekspos lewat Cloudflare Tunnel; belum hosted penuh di Cloudflare compute.
 
 Panduan lengkap: `docs/GUIDE-PHASE-8.md`, `docs/GUIDE-PHASE-6.md`, dan `docs/DEPLOYMENT.md`.

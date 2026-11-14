@@ -10,7 +10,7 @@ Fase 6 menyiapkan **production packaging**: Docker image API + client, nginx, va
 
 ### 1. Production-like Docker stack
 
-**https://manuals-strip-vacancies-practical.trycloudflare.com**
+**https://assistant-source-adjustments-exotic.trycloudflare.com**
 
 - Diarahkan ke nginx container `http://localhost:8080`.
 - API dan Mongo berjalan di network Docker privat.
@@ -20,7 +20,7 @@ Fase 6 menyiapkan **production packaging**: Docker image API + client, nginx, va
 
 ### 2. Dev preview (fitur + Strava simulasi)
 
-**https://bean-martial-old-thy.trycloudflare.com**
+**https://opponents-bras-prayers-gas.trycloudflare.com**
 
 - Diarahkan ke `vite preview` port 4173.
 - Strava demo aktif.
@@ -52,7 +52,7 @@ Fase 6 menyiapkan **production packaging**: Docker image API + client, nginx, va
 
 ## 1. Cek Production Stack di HP
 
-1. Buka **https://manuals-strip-vacancies-practical.trycloudflare.com**.
+1. Buka **https://assistant-source-adjustments-exotic.trycloudflare.com**.
 2. Login member.
 3. Buka **/balance**:
    - Budget **66 g**.
@@ -75,7 +75,7 @@ Fase 6 menyiapkan **production packaging**: Docker image API + client, nginx, va
 Buka di browser:
 
 ```text
-https://manuals-strip-vacancies-practical.trycloudflare.com/ready
+https://assistant-source-adjustments-exotic.trycloudflare.com/ready
 ```
 
 Harus muncul:
@@ -87,7 +87,7 @@ Harus muncul:
 Cek Swagger tertutup:
 
 ```text
-https://manuals-strip-vacancies-practical.trycloudflare.com/api-docs/
+https://assistant-source-adjustments-exotic.trycloudflare.com/api-docs/
 ```
 
 Harus **404**.
@@ -161,10 +161,10 @@ cd client
 E2E_BASE_URL=http://localhost:8080 npm run e2e
 
 # Production tunnel
-E2E_BASE_URL=https://manuals-strip-vacancies-practical.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://assistant-source-adjustments-exotic.trycloudflare.com npm run e2e
 
 # Dev preview
-E2E_BASE_URL=https://bean-martial-old-thy.trycloudflare.com npm run e2e
+E2E_BASE_URL=https://opponents-bras-prayers-gas.trycloudflare.com npm run e2e
 ```
 
 Yang diuji: landing mobile, menu, login, recap, filter order, pagination, checkout, staff dashboard, 0 console error.

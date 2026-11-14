@@ -10,8 +10,8 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
 |---|---|
 | **Frontend production** | **https://bakerman.ridwanafazn.my.id** |
 | Frontend Pages | https://bakerman-balance.pages.dev |
-| API (Cloudflare Tunnel) | https://manuals-strip-vacancies-practical.trycloudflare.com/api |
-| Dev preview | https://bean-martial-old-thy.trycloudflare.com |
+| API (Cloudflare Tunnel) | https://assistant-source-adjustments-exotic.trycloudflare.com/api |
+| Dev preview | https://opponents-bras-prayers-gas.trycloudflare.com |
 | Production lokal | http://localhost:8080 |
 | Dev lokal | http://localhost:5173 |
 
@@ -58,7 +58,7 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
    - Slot pickup muncul.
 
 Jika login/API gagal:
-- Cek API tunnel hidup: `https://manuals-strip-vacancies-practical.trycloudflare.com/api/v1/products`
+- Cek API tunnel hidup: `https://assistant-source-adjustments-exotic.trycloudflare.com/api/v1/products`
 - Cek CORS API sudah memasukkan domain Pages/custom.
 - Cek laptop & Docker stack menyala.
 
@@ -86,7 +86,7 @@ Status domain di Cloudflare Pages: **active**.
 Cloudflare Pages env saat ini:
 
 ```env
-VITE_API_URL=https://manuals-strip-vacancies-practical.trycloudflare.com/api
+VITE_API_URL=https://assistant-source-adjustments-exotic.trycloudflare.com/api
 ```
 
 Jika API pindah domain:
@@ -115,7 +115,8 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 
 - **API bukan hosted di Cloudflare compute.** Express + MongoDB tidak jalan di Workers free plan; Cloudflare Containers butuh Workers Paid.
 - API Quick Tunnel bersifat sementara; URL berubah jika tunnel restart.
-- Cloudinary asli belum diisi; aktivitas manual di production masih disabled.
+- **Cloudinary asli sudah aktif**; aktivitas manual production berfungsi (sudah diuji 66 g → 76 g → 66 g).
+- **MongoDB masih lokal Docker** karena Atlas menolak autentikasi (`bad auth`). Perlu reset/verifikasi password Atlas.
 - Google sign-in mungkin butuh domain ditambahkan ke Firebase Authorized Domains.
 - Strava asli opsional dan butuh langganan Strava.
 - Dependabot masih melaporkan **6 vulnerabilities**; server audit 0, client 4 high transitive Firestore (tidak dipakai runtime).
@@ -140,7 +141,7 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 
 ## Langkah Berikutnya (manual)
 
-1. Isi Cloudinary + `CRON_SECRET`.
+1. Reset/verifikasi password database user Atlas, lalu update `MONGODB_URI`.
 2. Pindahkan API ke hosting permanen (Vercel/Render/VPS/Cloudflare Containers).
 3. Update `VITE_API_URL` + CORS.
 4. Tambahkan domain ke Firebase Authorized Domains.

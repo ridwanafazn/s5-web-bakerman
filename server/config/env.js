@@ -54,6 +54,7 @@ const env = {
   adminEmails: splitList(process.env.ADMIN_EMAILS).map((email) => email.toLowerCase()),
   staffEmails: splitList(process.env.STAFF_EMAILS).map((email) => email.toLowerCase()),
   timezone: process.env.APP_TIMEZONE || 'Asia/Jakarta',
+  dnsServers: splitList(process.env.DNS_SERVERS),
   tokenEncryptionKey,
   trustProxy: Number.isInteger(trustProxy) && trustProxy >= 0 ? trustProxy : 1,
   logRequests,
