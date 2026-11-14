@@ -4,6 +4,7 @@ const dns = require('dns');
 const env = require('./config/env');
 const createApp = require('./app');
 const { initFirebase } = require('./config/firebase');
+const { connectDb } = require('./config/db');
 const { cleanupExpiredScreenshots } = require('./services/manualActivityService');
 
 // Beberapa jaringan lokal menolak query SRV MongoDB Atlas.
@@ -20,8 +21,7 @@ try {
   console.error('Firebase init error:', error.message);
 }
 
-mongoose
-  .connect(env.mongoUri, { serverSelectionTimeoutMS: 8000 })
+connectDb()
   .then(() => {
     console.log('MongoDB connected');
   })

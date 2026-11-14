@@ -2,6 +2,8 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const request = require('supertest');
 
+process.env.SKIP_DB_CONNECT = 'true';
+
 const createApp = require('../app');
 
 const app = createApp();

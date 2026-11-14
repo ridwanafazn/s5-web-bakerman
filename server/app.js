@@ -8,6 +8,7 @@ const env = require('./config/env');
 const swaggerDocument = require('./docs/swagger');
 const { writeLimiter } = require('./middleware/rateLimit');
 const { requestLogger } = require('./middleware/requestLogger');
+const { connectDb } = require('./config/db');
 
 const authRoutes = require('./routes/v1/auth');
 const meRoutes = require('./routes/v1/me');
@@ -55,7 +56,7 @@ function createApp() {
   });
 
   app.get('/ready', async (req, res) => {
-    if (mongoose.connection.readyState !== 1 || !mongoose.connection.db) {
+    if (process.env.SKIP_DB_CONNECT === 'true') {
       return res.status(503).json({
         status: 'not_ready',
         database: 'disconnected',
@@ -63,6 +64,7 @@ function createApp() {
     }
 
     try {
+      await connectDb();
       await mongoose.connection.db.admin().ping();
       return res.json({ status: 'ready', database: 'connected' });
     } catch {
@@ -79,6 +81,17 @@ function createApp() {
 
   // Auth/me dipasang sebelum pengecekan database agar request tanpa token
   // tetap mendapat 401 yang benar.
+  app.use('/api', async (req, res, next) => {
+    if (process.env.SKIP_DB_CONNECT === 'true') return next();
+
+    try {
+      await connectDb();
+      next();
+    } catch (error) {
+      next(error);
+    }
+  });
+
   app.use('/api/v1/auth', authRoutes);
   app.use('/api/v1/me', meRoutes);
 

@@ -25,7 +25,6 @@ services:
     environment:
       NODE_ENV: production
       PORT: 5050
-      MONGODB_URI: mongodb://mongo:27017/bakerman?directConnection=true
       STRAVA_DEMO_MODE: "false"
       CLOUDINARY_MOCK: "false"
       DISABLE_CLOUDINARY_CLEANUP_JOB: "false"

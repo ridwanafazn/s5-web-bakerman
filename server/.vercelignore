@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+!.env.production.example
+service-account*.json
+*firebase-adminsdk*.json
+node_modules
+test
+Dockerfile
+.dockerignore
+.git
+.gitignore
