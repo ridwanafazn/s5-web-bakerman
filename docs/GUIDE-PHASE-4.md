@@ -2,6 +2,8 @@
 
 Fase 4 menambahkan **order pickup nyata**: checkout, slot, kode order, staff dashboard, stok, dan budget.
 
+> **Dokumen historis.** Link tunnel di bawah sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
 > Untuk fitur terbaru (rekap mingguan, filter/pagination, a11y, performa, SEO), lihat **`docs/GUIDE-PHASE-5.md`**.
 
 ---

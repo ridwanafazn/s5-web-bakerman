@@ -1,7 +1,10 @@
 # Fase 6 — Production Hardening & Packaging
 
 **Tanggal:** 14 November 2026
-**Status:** ✅ Selesai untuk hardening & packaging lokal; deploy cloud masih menunggu kredensial
+
+> **Dokumen historis.** Link tunnel di laporan ini sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
+**Status:** ✅ Selesai; production live di Cloudflare Pages + Vercel
 **Strava:** belum disiapkan — production sengaja `STRAVA_DEMO_MODE=false`
 
 ---

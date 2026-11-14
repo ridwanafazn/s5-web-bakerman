@@ -1,6 +1,6 @@
 # Guide — Merasakan Hasil Fase 8
 
-Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, domain custom aktif, dan perubahan sudah di-commit/push.
+Fase 8: **UI landing diperbaiki**, frontend live di **Cloudflare Pages**, API live di **Vercel**, database **MongoDB Atlas**, dan perubahan sudah di-commit/push.
 
 ---
 
@@ -10,12 +10,13 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
 |---|---|
 | **Frontend production** | **https://bakerman.ridwanafazn.my.id** |
 | Frontend Pages | https://bakerman-balance.pages.dev |
-| API (Cloudflare Tunnel) | https://assistant-source-adjustments-exotic.trycloudflare.com/api |
-| Dev preview | https://opponents-bras-prayers-gas.trycloudflare.com |
-| Production lokal | http://localhost:8080 |
+| **API production** | **https://bakerman-api.vercel.app/api** |
+| API health | https://bakerman-api.vercel.app/health |
+| API readiness | https://bakerman-api.vercel.app/ready |
+| Production lokal (Docker) | http://localhost:8080 |
 | Dev lokal | http://localhost:5173 |
 
-> API masih berjalan di Docker lokal dan diekspos lewat Cloudflare Quick Tunnel. Laptop harus menyala. Frontend sudah benar-benar di-hosting di Cloudflare Pages.
+> Production tidak memakai Cloudflare Tunnel. Frontend di Cloudflare Pages, API di Vercel, database di MongoDB Atlas. Laptop tidak perlu menyala.
 
 ---
 
@@ -47,20 +48,19 @@ Fase 8: **UI landing diperbaiki**, frontend di-deploy ke **Cloudflare Pages**, d
 
 1. Login member.
 2. Buka `/balance`:
-   - Budget **66 g**.
+   - Budget **90 g**.
    - Recap 4 minggu tampil.
 3. Buka `/menu`:
    - 10 produk.
 4. Buka `/orders`:
-   - 4 order.
-   - Filter Selesai → 2 order.
+   - Belum ada order (data Atlas baru di-seed).
 5. Buka `/cart` → `/checkout`:
    - Slot pickup muncul.
 
 Jika login/API gagal:
-- Cek API tunnel hidup: `https://assistant-source-adjustments-exotic.trycloudflare.com/api/v1/products`
+- Cek API hidup: `https://bakerman-api.vercel.app/api/v1/products`
+- Cek readiness: `https://bakerman-api.vercel.app/ready` → `{"status":"ready","database":"connected"}`
 - Cek CORS API sudah memasukkan domain Pages/custom.
-- Cek laptop & Docker stack menyala.
 
 ---
 
@@ -81,12 +81,12 @@ Status domain di Cloudflare Pages: **active**.
 
 ---
 
-## 4. Update API URL (Jika Tunnel Berubah)
+## 4. Update API URL
 
 Cloudflare Pages env saat ini:
 
 ```env
-VITE_API_URL=https://assistant-source-adjustments-exotic.trycloudflare.com/api
+VITE_API_URL=https://bakerman-api.vercel.app/api
 ```
 
 Jika API pindah domain:
@@ -94,7 +94,7 @@ Jika API pindah domain:
 1. Cloudflare Dashboard → Workers & Pages → `bakerman-balance` → Settings → Environment variables.
 2. Ubah `VITE_API_URL` ke `https://<api-domain>/api`.
 3. Trigger redeploy (push ke `main` atau retry deployment).
-4. Update `CORS_ORIGIN` API agar memasukkan domain Pages/custom.
+4. Update `CORS_ORIGIN` di Vercel project `bakerman-api`.
 
 ---
 
@@ -111,15 +111,27 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 
 ---
 
-## 6. Batasan Penting
+## 6. Redeploy Backend
 
-- **API bukan hosted di Cloudflare compute.** Express + MongoDB tidak jalan di Workers free plan; Cloudflare Containers butuh Workers Paid.
-- API Quick Tunnel bersifat sementara; URL berubah jika tunnel restart.
-- **Cloudinary asli sudah aktif**; aktivitas manual production berfungsi (sudah diuji 66 g → 76 g → 66 g).
-- **MongoDB masih lokal Docker** karena Atlas menolak autentikasi (`bad auth`). Perlu reset/verifikasi password Atlas.
+```powershell
+vercel --cwd server --prod --yes --scope ridwan-ahmad-fauzans-projects
+```
+
+- Project: `bakerman-api`
+- Runtime: Node **24.x**
+- Env production: Mongo Atlas, Firebase, Cloudinary, token, CORS, cron
+- Dependency fix: `jwks-rsa@3.2.0` + `jose@4.15.4` override agar tidak kena `ERR_REQUIRE_ESM`
+
+---
+
+## 7. Batasan Penting
+
+- **Cloudinary asli sudah aktif**; aktivitas manual production berfungsi (diuji 90 g → 100 g → 90 g).
+- **MongoDB Atlas** dipakai production (`bakerman_app`, database `bakerman`).
+- **Strava asli belum aktif** karena butuh langganan Strava; gunakan aktivitas manual.
 - Google sign-in mungkin butuh domain ditambahkan ke Firebase Authorized Domains.
-- Strava asli opsional dan butuh langganan Strava.
 - Dependabot masih melaporkan **6 vulnerabilities**; server audit 0, client 4 high transitive Firestore (tidak dipakai runtime).
+- Akun demo sebaiknya dihapus sebelum public launch.
 
 ---
 
@@ -128,12 +140,12 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 - [ ] Landing desktop: 3 kartu sejajar.
 - [ ] Landing mobile: 1 kolom.
 - [ ] Login dari `bakerman.ridwanafazn.my.id`.
-- [ ] Budget 66 g + recap tampil.
+- [ ] Budget 90 g + recap tampil.
 - [ ] `/menu` 10 produk.
-- [ ] `/orders` filter Selesai 2 order.
 - [ ] `/checkout` slot muncul.
 - [ ] `https://bakerman-balance.pages.dev` 200.
-- [ ] API tunnel `/api/v1/products` 200.
+- [ ] API `/api/v1/products` 200.
+- [ ] `/ready` → `database: connected`.
 - [ ] Tidak ada console error.
 - [ ] E2E domain custom: 9 langkah, 0 console error.
 
@@ -141,8 +153,8 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 
 ## Langkah Berikutnya (manual)
 
-1. Reset/verifikasi password database user Atlas, lalu update `MONGODB_URI`.
-2. Pindahkan API ke hosting permanen (Vercel/Render/VPS/Cloudflare Containers).
-3. Update `VITE_API_URL` + CORS.
-4. Tambahkan domain ke Firebase Authorized Domains.
-5. Evaluasi Dependabot/Firebase.
+1. Tambahkan `bakerman.ridwanafazn.my.id` dan `bakerman-balance.pages.dev` ke Firebase Authorized Domains untuk Google sign-in.
+2. Evaluasi Dependabot/Firebase.
+3. Hapus akun demo sebelum public launch.
+4. Opsional: domain API custom (mis. `api.bakerman.ridwanafazn.my.id`) → Vercel.
+5. Opsional: Strava asli jika sudah ada langganan.

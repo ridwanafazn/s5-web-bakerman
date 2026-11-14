@@ -1,6 +1,9 @@
 # Fase 4 — Order, Checkout, Pickup & Staff Dashboard
 
 **Tanggal:** 13 November 2026
+
+> **Dokumen historis.** Link tunnel di laporan ini sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
 **Status:** ✅ Selesai
 **Tujuan:** mengubah keranjang menjadi order pickup nyata dengan stok, budget, slot, kode order, dan alur staff.
 

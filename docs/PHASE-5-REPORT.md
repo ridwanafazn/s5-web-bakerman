@@ -1,7 +1,10 @@
 # Fase 5 — Recap Mingguan, Polish, Performa, SEO, E2E & CI
 
 **Tanggal:** 13 November 2026
-**Status:** ✅ Selesai (kecuali deploy cloud — menunggu kredensial)
+
+> **Dokumen historis.** Link tunnel di laporan ini sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
+**Status:** ✅ Selesai; deploy production selesai 14 November 2026
 **Catatan roadmap:** Fase 5 di log implementasi ini menggabungkan **Fase 6–8 PRD** (recap, polish, performa, SEO, test, deploy preparation). Staff dashboard sudah selesai di Fase 4.
 
 ---

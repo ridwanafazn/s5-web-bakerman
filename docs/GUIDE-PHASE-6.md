@@ -2,6 +2,8 @@
 
 Fase 6 menyiapkan **production packaging**: Docker image API + client, nginx, validasi env production, readiness, logging, dan smoke test end-to-end.
 
+> **Dokumen historis.** Link tunnel di bawah sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
 > Untuk alternatif Strava (aktivitas manual + screenshot Cloudinary), lihat **`docs/GUIDE-PHASE-7.md`**.
 
 ---

@@ -2,6 +2,8 @@
 
 Fase 7 menambahkan **alternatif Strava**: aktivitas manual dengan **screenshot bukti** di Cloudinary. Screenshot otomatis dihapus setelah **7 hari**; record aktivitas tetap tersimpan untuk bonus.
 
+> **Dokumen historis.** Link tunnel di bawah sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
 > Strava API sejak Juni 2026 mewajibkan langganan berbayar untuk developer Standard Tier. Karena checkout Strava gagal, fitur bonus aktivitas tetap bisa dipakai lewat input manual.
 
 ---

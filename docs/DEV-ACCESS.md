@@ -1,42 +1,46 @@
-# Dev Access — Link Publik, Tunnel & Production Stack
+# Dev Access — Link Publik & Production Stack
 
-Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, serta cara membuat ulang tunnel dan stack production lokal.
+Dokumen ini mencatat cara mengakses aplikasi dari HP di jaringan berbeda, link production, serta cara menjalankan stack lokal.
 
 ---
 
 ## Link Publik Saat Ini
 
-### 0. Cloudflare Pages — frontend production
+### 0. Production — Cloudflare Pages + Vercel
 
-**https://bakerman.ridwanafazn.my.id**
+| Keperluan | URL |
+|---|---|
+| **Frontend** | **https://bakerman.ridwanafazn.my.id** |
+| Frontend Pages | **https://bakerman-balance.pages.dev** |
+| **API** | **https://bakerman-api.vercel.app/api** |
+| API health | https://bakerman-api.vercel.app/health |
+| API readiness | https://bakerman-api.vercel.app/ready |
 
-- Static frontend benar-benar hosted di Cloudflare Pages.
-- Pages default: **https://bakerman-balance.pages.dev**
-- API memanggil Cloudflare Tunnel ke Docker lokal.
-- Login/API sudah diuji dari domain ini: budget 66 g, recap, menu 10 produk, 0 console error.
+- Frontend statis di Cloudflare Pages (project `bakerman-balance`).
+- API Express + MongoDB di Vercel (project `bakerman-api`, Node 24.x).
+- Database MongoDB Atlas (`bakerman_app`, database `bakerman`).
+- Cloudinary asli aktif; Strava asli belum dikonfigurasi (gunakan aktivitas manual).
+- Login/API sudah diuji dari domain ini: budget 90 g, recap, menu 10 produk, 0 console error.
+- Tidak ada Cloudflare Tunnel untuk production; laptop tidak perlu menyala.
 
-### 1. Production-like Docker stack
+### 1. Production-like Docker stack (lokal)
 
-**https://assistant-source-adjustments-exotic.trycloudflare.com**
+**http://localhost:8080**
 
-- Diarahkan ke nginx container `http://localhost:8080`.
-- API + Mongo di network Docker privat (Mongo masih lokal; Atlas auth gagal).
-- Data demo sama: member **66 g**, **4 order**.
-- Strava demo **mati** (production behavior); Swagger **404**.
-- **Cloudinary asli aktif**; aktivitas manual production berfungsi.
-- E2E domain custom: 9 langkah, 0 console error; upload manual 66 g → 76 g → 66 g.
-- Cocok untuk mengecek hasil Fase 6–8 (nginx, security headers, readiness, logging).
+- nginx + API + Mongo Atlas Local dalam network Docker.
+- Data demo mengikuti `server/.env` (default: Atlas/local Mongo sesuai konfigurasi).
+- Strava demo **mati**; Swagger **404**.
+- Cocok untuk mengecek nginx, security headers, readiness, logging.
 
 ### 2. Dev preview (fitur + Strava simulasi)
 
-**https://opponents-bras-prayers-gas.trycloudflare.com**
+**http://localhost:4173**
 
-- Diarahkan ke `vite preview` di `http://127.0.0.1:4173`.
-- Strava demo aktif.
-- Aktivitas manual aktif dengan **mock Cloudinary** (badge “Mode simulasi bukti (dev)”).
-- Cocok untuk mencoba fitur yang butuh simulasi Strava/manual.
+- `vite preview` dari production build.
+- Strava demo bisa diaktifkan lewat env dev.
+- Aktivitas manual bisa memakai mock Cloudinary jika `CLOUDINARY_MOCK=true`.
 
-> Keduanya Cloudflare Quick Tunnel sementara. Laptop harus tetap menyala/online.
+> Tunnel Quick Tunnel hanya opsi sementara untuk demo lokal. Production sudah permanen di Pages + Vercel.
 
 **Link lokal:**
 
@@ -82,30 +86,24 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-### 3. Tunnel dev
+### 3. Tunnel dev (opsional)
 
 ```bash
 cloudflared tunnel --url http://localhost:4173
 ```
 
-Cloudflared akan mencetak URL `https://xxxx.trycloudflare.com`. Update URL di dokumen ini dan guide terkait.
+Cloudflared akan mencetak URL `https://xxxx.trycloudflare.com`. Update URL di dokumen ini jika masih dipakai untuk demo.
 
 ---
 
 ## Cara Menyalakan Ulang — Production Stack
 
 ```powershell
-# Key wajib (64 hex). Simpan, jangan commit.
-$env:TOKEN_ENCRYPTION_KEY = node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-
 # Build & start (client nginx + API + Mongo)
 docker compose -f docker-compose.prod.yml up -d --build
 
 # Seed pertama kali (destruktif; hanya demo)
 docker compose -f docker-compose.prod.yml run --rm -e SEED_FORCE=true api npm run seed
-
-# Tunnel production
-cloudflared tunnel --url http://localhost:8080
 ```
 
 Cek:
@@ -121,63 +119,52 @@ Stop:
 docker compose -f docker-compose.prod.yml down
 ```
 
-> Jangan jalankan `down -v` kecuali ingin menghapus volume Mongo production stack.
+> Stack ini membaca `server/.env`. Jangan jalankan `down -v` kecuali ingin menghapus volume Mongo lokal.
 
 ---
 
-## Cek Cepat Fase 6
+## Cek Cepat Production
 
-1. Buka production tunnel di HP → login member.
-2. Budget **66 g**, recap 24 g terpakai, 4 order.
-3. `/orders` filter Semua/Aktif/Selesai/Dibatalkan.
-4. `/checkout` slot pickup muncul.
+1. Buka **https://bakerman.ridwanafazn.my.id** di HP → login member.
+2. Budget **90 g**, menu 10 produk.
+3. `/orders` → belum ada order (data Atlas baru di-seed).
+4. `/checkout` → slot pickup muncul.
 5. Admin `/staff` → antrean + tabel stok.
-6. Buka `/ready` → `{"status":"ready"}`.
-7. Buka `/api-docs/` → **404**.
+6. Buka `https://bakerman-api.vercel.app/ready` → `{"status":"ready","database":"connected"}`.
+7. Buka `https://bakerman-api.vercel.app/api-docs/` → **404** (production).
 8. DevTools → Response Headers → cek `X-Content-Type-Options`, `X-Frame-Options`, dll.
 9. Strava production: “Strava belum tersedia di lingkungan ini.” (expected).
-10. Dev preview: tombol simulasi Strava masih aktif.
 
 E2E:
 
 ```bash
 cd client
 
+# Production custom domain
+$env:E2E_BASE_URL="https://bakerman.ridwanafazn.my.id"
+$env:E2E_HOST_RESOLVER="MAP bakerman.ridwanafazn.my.id 104.21.69.32"
+npm run e2e
+
 # Production lokal
 E2E_BASE_URL=http://localhost:8080 npm run e2e
-
-# Production tunnel
-E2E_BASE_URL=https://assistant-source-adjustments-exotic.trycloudflare.com npm run e2e
-
-# Dev preview
-E2E_BASE_URL=https://opponents-bras-prayers-gas.trycloudflare.com npm run e2e
 ```
 
-> Pagination hanya terlihat jika order > 8. Saat ini member punya 4 order.
+> Pagination hanya terlihat jika order > 8.
 
 ---
 
-## Cek Cepat Fase 7 — Aktivitas Manual
+## Cek Cepat — Aktivitas Manual
 
-### Dev preview (mock Cloudinary)
+### Production (Cloudinary asli)
 1. Login member → `/balance`.
 2. Scroll ke **“Catat aktivitas manual”**.
-3. Pastikan badge **“Mode simulasi bukti (dev)”** muncul.
-4. Isi 45 menit, pilih screenshot, klik **Kirim aktivitas**.
-5. Budget naik **66 g → 76 g**; daftar menampilkan **45 menit · +10 g**.
-6. Klik **Hapus** → budget kembali **66 g**.
+3. Isi 45 menit, pilih screenshot, klik **Kirim aktivitas**.
+4. Budget naik **90 g → 100 g**; daftar menampilkan **45 menit · +10 g**.
+5. Klik **Hapus** → budget kembali **90 g**.
+6. Screenshot otomatis dihapus dari Cloudinary setelah 7 hari.
 
-### Production stack
-- Tanpa kredensial Cloudinary: form **disabled** + pesan setup.
-- Setelah `CLOUDINARY_*` diisi dan `CLOUDINARY_MOCK=false`, form aktif.
-- Panduan lengkap: `docs/GUIDE-PHASE-7.md`.
-
-### E2E manual
-```bash
-cd client
-E2E_BASE_URL=http://localhost:4173 npm run e2e
-# PASS aktivitas manual + screenshot — 66 g → 76 g → 66 g
-```
+### Dev (mock Cloudinary)
+- Set `CLOUDINARY_MOCK=true`; badge **“Mode simulasi bukti (dev)”** muncul.
 
 ---
 
@@ -189,19 +176,18 @@ E2E_BASE_URL=http://localhost:4173 npm run e2e
 | `bakerman@gmail.com` | `bakermanAdmin` | admin |
 | `qa.bakerman.101126@gmail.com` | `Bakerman123!` | staff |
 
-Login di domain tunnel menggunakan **email/password**. Google sign-in mungkin memerlukan penambahan domain ke Firebase Authentication → Authorized domains.
+Login di domain production menggunakan **email/password**. Google sign-in memerlukan penambahan domain ke Firebase Authentication → Authorized domains.
 
 ---
 
 ## Checklist Jika Link Bermasalah
 
-1. Pastikan laptop menyala dan tidak sleep.
-2. Pastikan backend dev hidup: `curl http://localhost:5050/health` → `database: connected`.
-3. Pastikan preview dev hidup: `curl http://localhost:4173/` → 200.
-4. Pastikan production stack hidup: `curl http://localhost:8080/ready` → `{"status":"ready"}`.
-5. Pastikan cloudflared hidup (cek proses `cloudflared.exe`; bisa ada dua proses untuk 4173 dan 8080).
-6. Coba hard refresh / incognito di HP.
-7. Jika URL sudah mati, buat tunnel baru dan update dokumen ini.
+1. Cek `https://bakerman-api.vercel.app/ready` → `database: connected`.
+2. Cek `https://bakerman-api.vercel.app/api/v1/products` → 10 produk.
+3. Cek `https://bakerman.ridwanafazn.my.id` → 200.
+4. Jika memakai Docker lokal: pastikan stack hidup (`curl http://localhost:8080/ready`).
+5. Coba hard refresh / incognito di HP.
+6. Jika memakai tunnel lokal dan URL mati, buat tunnel baru (production tidak terpengaruh).
 
 ---
 

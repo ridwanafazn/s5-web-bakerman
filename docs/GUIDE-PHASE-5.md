@@ -2,6 +2,8 @@
 
 Fase 5 menambahkan **rekap mingguan**, **filter + pagination pesanan**, polish aksesibilitas, optimasi performa, SEO, serta test E2E & CI.
 
+> **Dokumen historis.** Link tunnel di bawah sudah tidak dipakai. Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
 ---
 
 ## 🌐 Link untuk HP (beda jaringan)

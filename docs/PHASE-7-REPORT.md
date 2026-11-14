@@ -1,7 +1,10 @@
 # Fase 7 — Alternatif Strava: Aktivitas Manual + Bukti Cloudinary
 
 **Tanggal:** 14 November 2026
-**Status:** ✅ Selesai (implementasi + mock dev); upload Cloudinary asli menunggu kredensial
+
+> **Dokumen historis.** Production sekarang: **https://bakerman.ridwanafazn.my.id** dengan API **https://bakerman-api.vercel.app/api**. Lihat `docs/PHASE-8-REPORT.md`.
+
+**Status:** ✅ Selesai; Cloudinary asli aktif di production
 **Latar belakang:** Strava API sejak Juni 2026 mewajibkan langganan berbayar untuk developer Standard Tier. Checkout Strava user gagal, jadi fitur bonus aktivitas tetap bisa dipakai lewat input manual + screenshot bukti.
 
 ---
