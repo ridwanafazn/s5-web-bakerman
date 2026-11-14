@@ -134,6 +134,7 @@ Pages terhubung ke GitHub `ridwanafazn/s5-web-bakerman`:
 - [ ] `https://bakerman-balance.pages.dev` 200.
 - [ ] API tunnel `/api/v1/products` 200.
 - [ ] Tidak ada console error.
+- [ ] E2E domain custom: 9 langkah, 0 console error.
 
 ---
 

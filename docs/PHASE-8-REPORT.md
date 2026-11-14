@@ -2,7 +2,7 @@
 
 **Tanggal:** 14 November 2026
 **Status:** ✅ Frontend live di Cloudflare Pages + domain custom; API via Cloudflare Tunnel
-**Commit:** `126077e` (aplikasi) + `af04876` & `11bccef` (docs deployment) — sudah di-push ke `origin/main`
+**Commit:** `126077e` (aplikasi) + `af04876`, `11bccef`, `dc34e4d` (docs deployment) — sudah di-push ke `origin/main`
 
 ---
 
@@ -57,6 +57,7 @@ Landing: hero + 3 kartu, grid=grid
 Login member → /balance → budget 66 g
 Recap: Order aktif 2, Selesai 2, on-budget 1/1
 /menu → 10 produk
+E2E domain custom: 9 langkah, 0 console error
 Console errors: 0
 ```
 
