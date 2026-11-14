@@ -2,7 +2,7 @@
 
 **Tanggal:** 14 November 2026
 **Status:** ✅ Frontend live di Cloudflare Pages + domain custom; API via Cloudflare Tunnel
-**Commit:** `126077e` (aplikasi), `af04876`–`36eb256` (docs), `ae0affa` (ignore service account), `34f4349` (env production + Cloudinary + tunnel checks) — sudah di-push ke `origin/main`
+**Commit:** `126077e` (aplikasi), `af04876`–`36eb256` (docs), `ae0affa` (ignore service account), `34f4349` (env production + Cloudinary + tunnel checks), `7735895` (docs final) — sudah di-push ke `origin/main`
 
 ---
 
