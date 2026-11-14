@@ -2,7 +2,7 @@
 
 **Tanggal:** 14 November 2026
 **Status:** ✅ Frontend live di Cloudflare Pages + domain custom; API via Cloudflare Tunnel
-**Commit:** `126077e` (aplikasi), `af04876`–`36eb256` (docs deployment), `ae0affa` (ignore service account), plus commit audit env terbaru — sudah di-push ke `origin/main`
+**Commit:** `126077e` (aplikasi), `af04876`–`36eb256` (docs), `ae0affa` (ignore service account), `34f4349` (env production + Cloudinary + tunnel checks) — sudah di-push ke `origin/main`
 
 ---
 
@@ -45,7 +45,7 @@ Deployment:
 - Production: **https://bakerman-balance.pages.dev**
 - Custom domain: **https://bakerman.ridwanafazn.my.id**
 - CNAME: `bakerman` → `bakerman-balance.pages.dev` (proxied)
-- Deployment terakhir: `1059a12a-5660-4060-b117-d904ddee535f` (env API URL terbaru)
+- Deployment terakhir: `224bfaf1-8fd0-498e-9bf9-37dc590cd457` (env API URL terbaru)
 - Build & deploy: **success**
 
 Verifikasi:
